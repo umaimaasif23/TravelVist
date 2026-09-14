@@ -1,0 +1,2728 @@
+/* ////////////////////////////////////////////navbar start */
+/*====================================================
+        TravelVist Premium Navbar
+====================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+/*==============================
+        Header
+==============================*/
+
+.tv-header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:85px;
+
+    z-index:9999;
+
+    background:rgba(15,23,42,.75);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    transition:.35s ease;
+
+}
+
+.tv-header.scrolled{
+
+    background:#0f172a;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+}
+
+/*==============================
+        Container
+==============================*/
+
+.tv-container{
+
+    width:min(92%,1400px);
+
+    margin:auto;
+
+    height:85px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+/*==============================
+        Logo
+==============================*/
+
+.tv-logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.tv-logo span{
+
+    color:#00b894;
+
+}
+
+.tv-plane{
+
+    margin-right:6px;
+
+    display:inline-block;
+
+    animation:fly 3s ease-in-out infinite;
+
+}
+
+@keyframes fly{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+
+    }
+
+}
+
+/*==============================
+        Navigation
+==============================*/
+
+.tv-nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:28px;
+
+}
+
+.tv-nav-menu li{
+
+    position:relative;
+
+}
+
+.tv-nav-menu li a{
+
+    color:#fff;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    position:relative;
+
+}
+
+.tv-nav-menu li a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:#00b894;
+
+    transition:.35s;
+
+}
+
+.tv-nav-menu li a:hover,
+.tv-nav-menu li a.active{
+
+    color:#00b894;
+
+}
+
+.tv-nav-menu li a:hover::after,
+.tv-nav-menu li a.active::after{
+
+    width:100%;
+
+}
+
+/*==============================
+        Button
+==============================*/
+
+.tv-book-btn{
+
+    padding:13px 28px;
+
+    background:#00b894;
+
+    color:#fff;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.tv-book-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(0,184,148,.35);
+
+}
+
+/*==============================
+        Mobile Menu Button
+==============================*/
+
+.tv-menu-btn{
+
+    display:none;
+
+    cursor:pointer;
+
+}
+
+.tv-menu-btn span{
+
+    display:block;
+
+    width:28px;
+
+    height:3px;
+
+    margin:5px 0;
+
+    background:#fff;
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+/*====================================================
+            Responsive
+====================================================*/
+
+@media(max-width:1100px){
+
+.tv-menu-btn{
+
+display:block;
+
+z-index:10001;
+
+}
+
+.tv-book-btn{
+
+display:none;
+
+}
+
+.tv-nav-menu{
+
+position:fixed;
+
+top:85px;
+
+left:-100%;
+
+width:min(280px,85vw);
+
+height:calc(100vh - 85px);
+
+background:#0f172a;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:flex-start;
+
+justify-content:flex-start;
+
+padding:40px 30px;
+
+gap:25px;
+
+transition:.4s ease;
+
+overflow-y:auto;
+
+box-shadow:10px 0 35px rgba(0,0,0,.25);
+
+}
+
+.tv-nav-menu.active{
+
+left:0;
+
+}
+
+.tv-nav-menu li{
+
+width:100%;
+
+}
+
+.tv-nav-menu li a{
+
+display:block;
+
+width:100%;
+
+font-size:17px;
+
+padding:10px 0;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tv-header{
+
+height:75px;
+
+}
+
+.tv-container{
+
+height:75px;
+
+}
+
+.tv-logo{
+
+font-size:25px;
+
+}
+
+.tv-nav-menu{
+
+top:75px;
+
+height:calc(100vh - 75px);
+
+}
+
+}
+
+@media(max-width:576px){
+
+.tv-container{
+
+width:94%;
+
+}
+
+.tv-logo{
+
+font-size:23px;
+
+}
+
+}
+
+@media(max-width:400px){
+
+.tv-logo{
+
+font-size:21px;
+
+}
+
+.tv-nav-menu{
+
+width:100%;
+
+}
+}
+
+
+/* ///////////////////////////////////////////navbar end */
+/* //////////////////////////////////////////hero start */
+/*========================================================
+        TRAVELVIST BEACHES — CINEMATIC HERO
+        BLUE THEME — FULL CSS REPLACEMENT
+========================================================*/
+
+.tv-beach-hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    min-height:680px;
+
+    overflow:hidden;
+
+    background:#0f172a;
+
+    color:#fff;
+}
+
+
+/*========================================================
+        SLIDER
+========================================================*/
+
+.tv-beach-slides{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+}
+
+.tv-beach-slide{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
+}
+
+.tv-beach-slide.active{
+    opacity:1;
+    visibility:visible;
+
+    z-index:2;
+}
+
+
+/*========================================================
+        SLIDE IMAGE
+========================================================*/
+
+.tv-beach-slide img{
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transform:scale(1.08);
+
+    transition:
+        transform 7s cubic-bezier(.15,.7,.25,1);
+}
+
+.tv-beach-slide.active img{
+    transform:scale(1);
+}
+
+
+/*========================================================
+        CINEMATIC BLUE OVERLAY
+========================================================*/
+
+.tv-beach-overlay{
+    position:absolute;
+    inset:0;
+
+    z-index:1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(15,23,42,.92) 0%,
+            rgba(15,23,42,.70) 30%,
+            rgba(15,23,42,.30) 65%,
+            rgba(15,23,42,.45) 100%
+        );
+}
+
+.tv-beach-overlay::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            0deg,
+            rgba(15,23,42,.85) 0%,
+            transparent 38%
+        );
+}
+
+
+/*========================================================
+        HERO CONTENT
+========================================================*/
+
+.tv-beach-content{
+    position:absolute;
+
+    left:8%;
+    top:50%;
+
+    width:min(650px,85%);
+
+    transform:translateY(-45%);
+
+    z-index:4;
+
+    opacity:0;
+
+    transition:
+        opacity .8s ease,
+        transform 1s cubic-bezier(.2,.8,.2,1);
+}
+
+.tv-beach-slide.active .tv-beach-content{
+    opacity:1;
+
+    transform:translateY(-50%);
+}
+
+
+/*========================================================
+        EYEBROW
+========================================================*/
+
+.tv-beach-eyebrow{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:22px;
+
+    color:#38bdf8;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+}
+
+.tv-beach-eyebrow::before{
+    content:"";
+
+    width:35px;
+    height:1px;
+
+    background:#38bdf8;
+}
+
+
+/*========================================================
+        HERO HEADING
+========================================================*/
+
+.tv-beach-content h1{
+    margin:0;
+
+    color:#fff;
+
+    font-size:
+        clamp(60px,8vw,110px);
+
+    line-height:.9;
+
+    font-weight:300;
+
+    letter-spacing:-4px;
+
+    text-shadow:
+        0 10px 35px rgba(0,0,0,.4);
+}
+
+.tv-beach-content h1 strong{
+    display:block;
+
+    color:#38bdf8;
+
+    font-weight:800;
+
+    letter-spacing:-5px;
+
+    text-shadow:
+        0 8px 30px rgba(37,99,235,.3);
+}
+
+
+/*========================================================
+        DESCRIPTION
+========================================================*/
+
+.tv-beach-content p{
+    max-width:520px;
+
+    margin:28px 0 30px;
+
+    color:rgba(255,255,255,.72);
+
+    font-size:15px;
+
+    line-height:1.8;
+}
+
+
+/*========================================================
+        EXPLORE BUTTON
+========================================================*/
+
+.tv-beach-btn{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 24px;
+
+    border-radius:50px;
+background: #00b894;
+    /* background:#2563eb; */
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    box-shadow:
+        0 12px 30px rgba(37,99,235,.30);
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease,
+        gap .35s ease;
+}
+
+.tv-beach-btn i{
+    transition:
+        transform .35s ease;
+}
+
+.tv-beach-btn:hover{
+    background:#1d4ed8;
+
+    transform:translateY(-4px);
+
+    gap:17px;
+
+    box-shadow:
+        0 18px 40px rgba(37,99,235,.42);
+}
+
+.tv-beach-btn:hover i{
+    transform:translateX(3px);
+}
+
+
+/*========================================================
+        SLIDER ARROWS
+========================================================*/
+
+.tv-beach-controls{
+    position:absolute;
+
+    right:6%;
+    bottom:90px;
+
+    display:flex;
+
+    gap:10px;
+
+    z-index:10;
+}
+
+.tv-beach-controls button{
+    width:52px;
+    height:52px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    background:rgba(15,23,42,.35);
+
+    backdrop-filter:blur(14px);
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:
+        .35s ease;
+}
+
+.tv-beach-controls button:hover{
+    background:#2563eb;
+
+    border-color:#2563eb;
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 12px 28px rgba(37,99,235,.35);
+}
+
+
+/*========================================================
+        SLIDE COUNTER
+========================================================*/
+
+.tv-beach-counter{
+    position:absolute;
+
+    right:6%;
+    bottom:165px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    z-index:10;
+
+    color:rgba(255,255,255,.5);
+
+    font-size:12px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+}
+
+.tv-current-slide{
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:700;
+}
+
+.tv-counter-line{
+    width:70px;
+
+    height:1px;
+
+    background:rgba(255,255,255,.35);
+}
+
+
+/*========================================================
+        PROGRESS BAR
+========================================================*/
+
+.tv-beach-progress{
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:3px;
+
+    background:rgba(255,255,255,.12);
+
+    z-index:20;
+}
+
+.tv-beach-progress span{
+    display:block;
+
+    width:0;
+    height:100%;
+
+    background:#2563eb;
+
+    box-shadow:
+        0 0 14px rgba(37,99,235,.8);
+
+    transition:none;
+}
+
+.tv-beach-progress span.animate{
+    animation:
+        tvBeachProgress 6s linear forwards;
+}
+
+@keyframes tvBeachProgress{
+
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+
+/*========================================================
+        SCROLL INDICATOR
+========================================================*/
+
+.tv-beach-scroll{
+    position:absolute;
+
+    left:50%;
+    bottom:30px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:8px;
+
+    z-index:10;
+}
+
+.tv-beach-scroll span{
+    position:relative;
+
+    width:22px;
+    height:35px;
+
+    border:1px solid rgba(255,255,255,.5);
+
+    border-radius:20px;
+}
+
+.tv-beach-scroll span::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:7px;
+
+    width:3px;
+    height:7px;
+
+    border-radius:10px;
+
+    background:#38bdf8;
+
+    transform:translateX(-50%);
+
+    animation:
+        tvBeachScroll 1.8s ease-in-out infinite;
+}
+
+@keyframes tvBeachScroll{
+
+    0%{
+        opacity:0;
+
+        transform:
+            translate(-50%,0);
+    }
+
+    30%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+
+        transform:
+            translate(-50%,12px);
+    }
+
+}
+
+.tv-beach-scroll p{
+    margin:0;
+
+    color:rgba(255,255,255,.55);
+
+    font-size:8px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+}
+
+
+/*========================================================
+        DECORATIVE BLUE CIRCLES
+========================================================*/
+
+.tv-beach-hero::before{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    right:-80px;
+
+    width:220px;
+    height:220px;
+
+    border:
+        1px solid rgba(56,189,248,.20);
+
+    border-radius:50%;
+
+    z-index:3;
+
+    pointer-events:none;
+}
+
+.tv-beach-hero::after{
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    right:-35px;
+
+    width:130px;
+    height:130px;
+
+    border:
+        1px solid rgba(37,99,235,.25);
+
+    border-radius:50%;
+
+    z-index:3;
+
+    pointer-events:none;
+}
+
+
+/*========================================================
+        TABLET
+========================================================*/
+
+@media(max-width:992px){
+
+    .tv-beach-hero{
+        min-height:650px;
+    }
+
+    .tv-beach-content{
+        left:6%;
+    }
+
+    .tv-beach-content h1{
+        font-size:
+            clamp(55px,9vw,85px);
+    }
+
+    .tv-beach-controls{
+        right:5%;
+        bottom:75px;
+    }
+
+    .tv-beach-counter{
+        right:5%;
+        bottom:145px;
+    }
+
+}
+
+
+/*========================================================
+        MOBILE
+========================================================*/
+
+@media(max-width:768px){
+
+    .tv-beach-hero{
+        height:100svh;
+        min-height:620px;
+    }
+
+
+    .tv-beach-overlay{
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(15,23,42,.86),
+                rgba(15,23,42,.42)
+            ),
+            linear-gradient(
+                0deg,
+                rgba(15,23,42,.80),
+                transparent 55%
+            );
+    }
+
+
+    .tv-beach-content{
+
+        left:25px;
+        right:25px;
+
+        top:48%;
+
+        width:auto;
+
+        transform:
+            translateY(-40%);
+    }
+
+    .tv-beach-slide.active
+    .tv-beach-content{
+
+        transform:
+            translateY(-50%);
+    }
+
+
+    .tv-beach-eyebrow{
+
+        margin-bottom:16px;
+
+        font-size:9px;
+
+        letter-spacing:2px;
+    }
+
+    .tv-beach-eyebrow::before{
+        width:25px;
+    }
+
+
+    .tv-beach-content h1{
+
+        font-size:
+            clamp(48px,15vw,72px);
+
+        letter-spacing:-3px;
+    }
+
+    .tv-beach-content h1 strong{
+        letter-spacing:-3px;
+    }
+
+
+    .tv-beach-content p{
+
+        margin:20px 0 24px;
+
+        font-size:13px;
+
+        line-height:1.7;
+
+        max-width:390px;
+    }
+
+
+    .tv-beach-btn{
+
+        padding:13px 20px;
+
+        font-size:12px;
+    }
+
+
+    /* Arrows */
+
+    .tv-beach-controls{
+
+        left:25px;
+        right:auto;
+
+        bottom:75px;
+    }
+
+    .tv-beach-controls button{
+
+        width:44px;
+        height:44px;
+
+        font-size:12px;
+    }
+
+
+    /* Counter */
+
+    .tv-beach-counter{
+
+        right:25px;
+
+        bottom:88px;
+
+        gap:9px;
+    }
+
+    .tv-current-slide{
+        font-size:17px;
+    }
+
+    .tv-counter-line{
+        width:40px;
+    }
+
+
+    /* Hide scroll on mobile */
+
+    .tv-beach-scroll{
+        display:none;
+    }
+
+
+    /* Hide decorative circles */
+
+    .tv-beach-hero::before,
+    .tv-beach-hero::after{
+        display:none;
+    }
+
+}
+
+
+/*========================================================
+        SMALL MOBILE
+========================================================*/
+
+@media(max-width:480px){
+
+    .tv-beach-content{
+
+        left:20px;
+        right:20px;
+    }
+
+    .tv-beach-content h1{
+        font-size:48px;
+    }
+
+    .tv-beach-content p{
+        font-size:12px;
+    }
+
+    .tv-beach-controls{
+
+        left:20px;
+        bottom:68px;
+    }
+
+    .tv-beach-counter{
+
+        right:20px;
+        bottom:80px;
+    }
+
+}
+/* ////////////////////////////////////////////hero end */
+/* ////////////////////////////////////////////side bar start */
+/* =========================================
+   TRAVELVIST - COAST DISCOVERY
+   BLUE CINEMATIC THEME
+========================================= */
+
+.tv-coast-discovery {
+    position: relative;
+    width: 100%;
+    padding: 130px 6%;
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(37, 99, 235, 0.12),
+            transparent 30%
+        ),
+        #0f172a;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.tv-coast-heading {
+    max-width: 760px;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.tv-coast-heading > span {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #38bdf8;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.tv-coast-heading h2 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(38px, 5vw, 70px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+.tv-coast-heading h2 strong {
+    color: #ffffff;
+    font-weight: 800;
+}
+
+.tv-coast-heading p {
+    max-width: 600px;
+    margin: 25px auto 0;
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   STORY LAYOUT
+========================================= */
+
+.tv-coast-story {
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto 150px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: clamp(50px, 7vw, 110px);
+}
+
+
+/* Second section reversed */
+
+.tv-coast-story-two {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+}
+
+.tv-coast-story-two .tv-coast-image-wrap {
+    order: 2;
+}
+
+.tv-coast-story-two .tv-coast-content {
+    order: 1;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.tv-coast-image-wrap {
+    position: relative;
+    min-height: 620px;
+    perspective: 1200px;
+}
+
+.tv-coast-image {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    transform: rotateY(-3deg);
+    box-shadow:
+        0 35px 80px rgba(0, 0, 0, 0.38),
+        0 0 0 1px rgba(255, 255, 255, 0.06);
+
+    transition:
+        transform 0.7s ease,
+        box-shadow 0.7s ease;
+}
+
+.tv-coast-story-two .tv-coast-image {
+    transform: rotateY(3deg);
+}
+
+.tv-coast-image-wrap:hover .tv-coast-image {
+    transform:
+        rotateY(0deg)
+        translateY(-8px);
+
+    box-shadow:
+        0 45px 100px rgba(0, 0, 0, 0.48),
+        0 0 0 1px rgba(56, 189, 248, 0.22);
+}
+
+.tv-coast-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+
+    transition:
+        transform 1.2s cubic-bezier(.2,.7,.2,1),
+        filter 0.7s ease;
+}
+
+.tv-coast-image-wrap:hover img {
+    transform: scale(1.07);
+}
+
+
+/* Image dark gradient */
+
+.tv-coast-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(15, 23, 42, 0.78),
+            transparent 45%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   IMAGE NUMBER
+========================================= */
+
+.tv-coast-number {
+    position: absolute;
+    top: 28px;
+    left: 28px;
+
+    width: 72px;
+    height: 72px;
+
+    border: 1px solid rgba(255,255,255,0.28);
+    border-radius: 50%;
+
+    background: rgba(15, 23, 42, 0.38);
+    backdrop-filter: blur(12px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 3;
+}
+
+.tv-coast-number span {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.tv-coast-number small {
+    margin-top: 2px;
+    color: #38bdf8;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* =========================================
+   IMAGE LABEL
+========================================= */
+
+.tv-coast-image-label {
+    position: absolute;
+    left: 35px;
+    bottom: 30px;
+    z-index: 3;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tv-coast-image-label span {
+    margin-bottom: 5px;
+
+    color: #38bdf8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.tv-coast-image-label strong {
+    color: #ffffff;
+    font-size: clamp(28px, 3vw, 44px);
+    letter-spacing: 1px;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.tv-coast-content {
+    max-width: 590px;
+}
+
+.tv-coast-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 22px;
+
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.tv-coast-kicker i {
+    font-size: 13px;
+}
+
+
+.tv-coast-content h3 {
+    margin: 0;
+
+    color: #ffffff;
+    font-size: clamp(38px, 4vw, 62px);
+    line-height: 1.05;
+    font-weight: 300;
+    letter-spacing: -2px;
+}
+
+.tv-coast-content h3 strong {
+    display: block;
+
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
+.tv-coast-content > p {
+    margin: 28px 0;
+
+    max-width: 540px;
+
+    color: rgba(255,255,255,0.62);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+
+/* =========================================
+   LOCATION
+========================================= */
+
+.tv-coast-location {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin: 30px 0;
+
+    padding: 18px 20px;
+
+    width: fit-content;
+
+    border-left: 2px solid #2563eb;
+    background: rgba(255,255,255,0.035);
+}
+
+.tv-coast-location > i {
+    color: #38bdf8;
+    font-size: 20px;
+}
+
+.tv-coast-location div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tv-coast-location small {
+    color: rgba(255,255,255,0.4);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.tv-coast-location span {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.tv-coast-stats {
+    display: flex;
+    gap: 0;
+
+    margin: 35px 0;
+}
+
+.tv-coast-stats > div {
+    min-width: 115px;
+    padding-right: 25px;
+    margin-right: 25px;
+
+    border-right: 1px solid rgba(255,255,255,0.12);
+}
+
+.tv-coast-stats > div:last-child {
+    border-right: none;
+}
+
+.tv-coast-stats strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.tv-coast-stats span {
+    color: rgba(255,255,255,0.45);
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.tv-coast-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+
+    padding: 15px 23px;
+
+    color: #ffffff;
+    background: #2563eb;
+
+    border-radius: 4px;
+
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 12px 30px rgba(37,99,235,0.22);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.tv-coast-btn i {
+    transition: transform 0.3s ease;
+}
+
+.tv-coast-btn:hover {
+    color: #ffffff;
+    background: #1d4ed8;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 18px 40px rgba(37,99,235,0.32);
+}
+
+.tv-coast-btn:hover i {
+    transform: translateX(5px);
+}
+
+
+/* =========================================
+   DECORATIVE GLOW
+========================================= */
+
+.tv-coast-story::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    right: -180px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(37,99,235,0.08);
+
+    filter: blur(70px);
+
+    pointer-events: none;
+}
+
+.tv-coast-story-two::before {
+    right: auto;
+    left: -180px;
+}
+
+
+/* =========================================
+   SCROLL REVEAL
+========================================= */
+
+.tv-coast-story,
+.tv-coast-heading {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.tv-coast-story.tv-coast-visible,
+.tv-coast-heading.tv-coast-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .tv-coast-discovery {
+        padding: 100px 5%;
+    }
+
+    .tv-coast-heading {
+        margin-bottom: 75px;
+    }
+
+    .tv-coast-story {
+        gap: 45px;
+        margin-bottom: 110px;
+    }
+
+    .tv-coast-image-wrap {
+        min-height: 520px;
+    }
+
+    .tv-coast-image {
+        height: 520px;
+    }
+
+    .tv-coast-content h3 {
+        font-size: 43px;
+    }
+
+    .tv-coast-stats > div {
+        min-width: auto;
+        padding-right: 15px;
+        margin-right: 15px;
+    }
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+    .tv-coast-discovery {
+        padding: 80px 5%;
+    }
+
+    .tv-coast-heading {
+        margin-bottom: 60px;
+    }
+
+    .tv-coast-heading h2 {
+        font-size: 42px;
+    }
+
+    .tv-coast-heading p {
+        font-size: 14px;
+    }
+
+    .tv-coast-story,
+    .tv-coast-story-two {
+        display: flex;
+        flex-direction: column;
+
+        gap: 45px;
+        margin-bottom: 90px;
+    }
+
+    .tv-coast-story-two .tv-coast-image-wrap,
+    .tv-coast-story-two .tv-coast-content {
+        order: initial;
+    }
+
+    .tv-coast-image-wrap {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .tv-coast-image {
+        width: 100%;
+        height: min(600px, 78vw);
+
+        transform: none !important;
+
+        border-radius: 22px;
+    }
+
+    .tv-coast-image-wrap:hover .tv-coast-image {
+        transform: translateY(-5px) !important;
+    }
+
+    .tv-coast-content {
+        width: 100%;
+        max-width: 650px;
+    }
+
+    .tv-coast-content h3 {
+        font-size: 42px;
+    }
+
+    .tv-coast-content > p {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    .tv-coast-discovery {
+        padding: 65px 20px;
+    }
+
+    .tv-coast-heading {
+        margin-bottom: 50px;
+    }
+
+    .tv-coast-heading > span {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .tv-coast-heading h2 {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+
+    .tv-coast-heading p {
+        margin-top: 18px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .tv-coast-story {
+        gap: 35px;
+        margin-bottom: 75px;
+    }
+
+    .tv-coast-image {
+        height: 105vw;
+        min-height: 390px;
+        max-height: 500px;
+        border-radius: 18px;
+    }
+
+    .tv-coast-number {
+        width: 58px;
+        height: 58px;
+        top: 18px;
+        left: 18px;
+    }
+
+    .tv-coast-number span {
+        font-size: 16px;
+    }
+
+    .tv-coast-image-label {
+        left: 22px;
+        bottom: 22px;
+    }
+
+    .tv-coast-image-label span {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .tv-coast-image-label strong {
+        font-size: 30px;
+    }
+
+    .tv-coast-kicker {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .tv-coast-content h3 {
+        font-size: 35px;
+        letter-spacing: -1px;
+    }
+
+    .tv-coast-content > p {
+        margin: 20px 0;
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .tv-coast-location {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 22px 0;
+    }
+
+    .tv-coast-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .tv-coast-stats > div {
+        min-width: 0;
+        padding-right: 10px;
+        margin-right: 10px;
+    }
+
+    .tv-coast-stats strong {
+        font-size: 18px;
+    }
+
+    .tv-coast-stats span {
+        font-size: 8px;
+    }
+
+    .tv-coast-btn {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+/* ///////////////////////////////////////////side bar end */
+/* ////////////////////////////////////////////last bar start */
+/* =========================================
+   TRAVELVIST - CINEMATIC OCEAN VIDEO
+========================================= */
+
+.tv-ocean-cinema {
+    position: relative;
+    width: 100%;
+    padding: 120px 5%;
+    background: #0f172a;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   VIDEO CONTAINER
+========================================= */
+
+.tv-ocean-video-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 1450px;
+    height: min(76vh, 780px);
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background: #020617;
+
+    box-shadow:
+        0 35px 90px rgba(0, 0, 0, 0.45),
+        0 0 0 1px rgba(255,255,255,0.06);
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.tv-ocean-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transform: scale(1.02);
+
+    transition:
+        transform 1.2s ease,
+        filter 0.7s ease;
+}
+
+
+/* Subtle zoom on hover */
+
+.tv-ocean-video-box:hover .tv-ocean-video {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.tv-ocean-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(15,23,42,0.65) 0%,
+            rgba(15,23,42,0.15) 38%,
+            rgba(15,23,42,0.18) 55%,
+            rgba(15,23,42,0.88) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* Cinematic vignette */
+
+.tv-ocean-vignette {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 35%,
+            rgba(2,6,23,0.38) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   TOP BAR
+========================================= */
+
+.tv-ocean-top {
+    position: absolute;
+
+    top: 30px;
+    left: 35px;
+    right: 35px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tv-ocean-top > span {
+    color: #38bdf8;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.tv-ocean-sound {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: rgba(255,255,255,0.65);
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.tv-ocean-sound i {
+    color: #38bdf8;
+}
+
+
+/* =========================================
+   CENTER CONTENT
+========================================= */
+
+.tv-ocean-center {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    z-index: 5;
+
+    width: 90%;
+
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+}
+
+
+.tv-ocean-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #38bdf8;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.tv-ocean-center h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(50px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    font-weight: 300;
+
+    letter-spacing: -4px;
+
+    text-transform: uppercase;
+}
+
+
+.tv-ocean-center h2 strong {
+    font-weight: 800;
+}
+
+
+.tv-ocean-center p {
+    margin: 25px auto 30px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   PLAY BUTTON
+========================================= */
+
+.tv-ocean-play {
+    position: relative;
+
+    width: 78px;
+    height: 78px;
+
+    padding: 0;
+
+    border: 1px solid rgba(255,255,255,0.55);
+    border-radius: 50%;
+
+    background: rgba(15,23,42,0.35);
+
+    backdrop-filter: blur(12px);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+.tv-ocean-play::before {
+    content: "";
+
+    position: absolute;
+    inset: -10px;
+
+    border: 1px solid rgba(56,189,248,0.35);
+
+    border-radius: 50%;
+
+    animation: tvOceanPulse 2.2s infinite;
+}
+
+
+.tv-ocean-play i {
+    margin-left: 3px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+
+.tv-ocean-play:hover {
+    transform: scale(1.1);
+
+    background: #2563eb;
+
+    border-color: #38bdf8;
+}
+
+
+@keyframes tvOceanPulse {
+
+    0% {
+        transform: scale(0.92);
+        opacity: 0.7;
+    }
+
+    70% {
+        transform: scale(1.12);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.12);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================================
+   BOTTOM CONTROLS
+========================================= */
+
+.tv-ocean-bottom {
+    position: absolute;
+
+    left: 35px;
+    right: 35px;
+    bottom: 28px;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.tv-ocean-time,
+.tv-ocean-duration {
+    min-width: 38px;
+
+    color: rgba(255,255,255,0.72);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.tv-ocean-duration {
+    text-align: right;
+}
+
+
+/* Progress */
+
+.tv-ocean-progress {
+    position: relative;
+
+    flex: 1;
+
+    height: 3px;
+
+    background: rgba(255,255,255,0.25);
+
+    overflow: hidden;
+
+    cursor: pointer;
+}
+
+
+.tv-ocean-progress span {
+    display: block;
+
+    width: 0%;
+    height: 100%;
+
+    background: #38bdf8;
+
+    transition: width 0.1s linear;
+}
+
+
+/* Mute button */
+
+.tv-ocean-mute {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+
+    background: rgba(15,23,42,0.35);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.tv-ocean-mute:hover {
+    background: #2563eb;
+    border-color: #38bdf8;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .tv-ocean-cinema {
+        padding: 90px 4%;
+    }
+
+    .tv-ocean-video-box {
+        height: 620px;
+        border-radius: 24px;
+    }
+
+    .tv-ocean-center h2 {
+        font-size: clamp(48px, 9vw, 75px);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .tv-ocean-cinema {
+        padding: 65px 18px;
+    }
+
+    .tv-ocean-video-box {
+        height: 570px;
+
+        border-radius: 20px;
+    }
+
+    .tv-ocean-top {
+        top: 22px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .tv-ocean-top > span {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .tv-ocean-sound {
+        display: none;
+    }
+
+    .tv-ocean-center {
+        width: 88%;
+    }
+
+    .tv-ocean-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2.5px;
+    }
+
+    .tv-ocean-center h2 {
+        font-size: 49px;
+        letter-spacing: -2px;
+    }
+
+    .tv-ocean-center p {
+        font-size: 13px;
+        margin: 20px auto 25px;
+    }
+
+    .tv-ocean-play {
+        width: 68px;
+        height: 68px;
+    }
+
+    .tv-ocean-bottom {
+        left: 18px;
+        right: 18px;
+        bottom: 20px;
+
+        gap: 9px;
+    }
+
+    .tv-ocean-time,
+    .tv-ocean-duration {
+        min-width: 31px;
+        font-size: 8px;
+    }
+
+    .tv-ocean-mute {
+        width: 31px;
+        height: 31px;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .tv-ocean-video-box {
+        height: 520px;
+    }
+
+    .tv-ocean-center h2 {
+        font-size: 42px;
+    }
+
+    .tv-ocean-center p {
+        font-size: 12px;
+    }
+
+}
+/* //////////////////////////////////////////last bar end */
+
+/* /////////////////////////////////////////////////////////footer start */
+/*==================================================
+            TravelVist Premium Footer
+==================================================*/
+
+.tv-footer{
+
+    background:#0f172a;
+
+    color:#fff;
+
+    padding-top:90px;
+
+}
+
+.tv-footer-container{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1.3fr;
+
+    gap:45px;
+
+    padding-bottom:60px;
+
+}
+
+.tv-footer-logo{
+
+    font-size:34px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.tv-footer-logo span{
+
+    color:#00b894;
+
+}
+
+.tv-footer-about p{
+
+    color:#cbd5e1;
+
+    margin:25px 0;
+
+    line-height:1.9;
+
+}
+
+.tv-footer-links h3,
+
+.tv-footer-contact h3{
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+}
+
+.tv-footer-links ul{
+
+    list-style:none;
+
+}
+
+.tv-footer-links li{
+
+    margin-bottom:15px;
+
+}
+
+.tv-footer-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.tv-footer-links a:hover{
+
+    color:#00b894;
+
+    padding-left:8px;
+
+}
+
+.tv-footer-contact p{
+
+    color:#cbd5e1;
+
+    margin-bottom:16px;
+
+}
+
+.tv-footer-contact i{
+
+    color:#00b894;
+
+    margin-right:10px;
+
+}
+/*=========================
+      Social Icons
+=========================*/
+
+.tv-footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.tv-footer-social a{
+
+    width:46px;
+
+    height:46px;
+
+    background:#1e293b;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.tv-footer-social a:hover{
+
+    background:#00b894;
+
+    transform:translateY(-6px);
+
+}
+
+/*=========================
+      Newsletter
+=========================*/
+
+.tv-newsletter{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+    padding:35px;
+
+    background:#00b894;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    transform:translateY(40px);
+
+}
+
+.tv-news-content h3{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.tv-newsletter form{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.tv-newsletter input{
+
+    width:320px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    outline:none;
+
+}
+
+.tv-newsletter button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tv-newsletter button:hover{
+
+    background:#fff;
+
+    color:#00b894;
+
+}
+
+/*=========================
+      Bottom
+=========================*/
+
+.tv-footer-bottom{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:70px 20px 30px;
+
+}
+
+.tv-footer-bottom span{
+
+    color:#00b894;
+
+    font-weight:700;
+
+}
+
+/*=========================
+      Responsive
+=========================*/
+
+@media(max-width:992px){
+
+.tv-footer-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.tv-newsletter{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tv-footer-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.tv-footer-social{
+
+justify-content:center;
+
+}
+
+.tv-newsletter input{
+
+width:100%;
+
+}
+
+.tv-newsletter form{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.tv-newsletter button{
+
+width:100%;
+
+}
+
+}
+/* ///////////////////////////////////////////////////////////footer end */
