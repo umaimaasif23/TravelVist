@@ -1,0 +1,1354 @@
+/* ==========================================================================
+            ------------ planner hero start--------------
+   ========================================================================== */
+
+/* Google Font & Variables */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-accent: #00b4d8;
+  --primary-hover: #0096c7;
+  --dark-bg: #03071e;
+  --glass-bg: rgba(255, 255, 255, 0.12);
+  --glass-border: rgba(255, 255, 255, 0.22);
+  --text-main: #ffffff;
+  --text-muted: #cbd5e1;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Hero Section Base */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+  padding: 120px 24px 60px;
+  overflow: hidden;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(3, 7, 30, 0.5) 0%,
+    rgba(3, 7, 30, 0.75) 60%,
+    rgba(3, 7, 30, 0.95) 100%
+  );
+  z-index: 1;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Badge & Headings */
+.badge-pill {
+  background: rgba(0, 180, 216, 0.18);
+  border: 1px solid var(--primary-accent);
+  color: var(--primary-accent);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(8px);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.15;
+  margin: 16px 0;
+}
+
+.highlight-text {
+  background: linear-gradient(90deg, #90e0ef, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Modern Glassmorphism Search Panel */
+.glass-search-card {
+  width: 100%;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1.8fr 1.5fr 1.5fr;
+  gap: 16px;
+  align-items: end;
+}
+
+.field-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: var(--primary-accent);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.25);
+}
+
+.field-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.input-wrapper input,
+.input-wrapper select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.input-wrapper select option {
+  background: var(--dark-bg);
+  color: #fff;
+}
+
+.range-wrapper {
+  padding: 14px;
+}
+
+input[type="range"] {
+  accent-color: var(--primary-accent);
+  cursor: pointer;
+}
+
+/* Primary Search Button */
+.primary-btn {
+  width: 100%;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-accent), #0077b6);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 180, 216, 0.4);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+/* Autocomplete Suggestions Dropdown */
+.suggestions-dropdown {
+  position: absolute;
+  top: 105%;
+  left: 0;
+  width: 100%;
+  background: #0d1b2a;
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.suggestion-item {
+  padding: 10px 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+.suggestion-item:hover {
+  background: rgba(0, 180, 216, 0.2);
+  color: #fff;
+}
+
+.hidden { display: none; }
+
+/* Quick Filter Tags */
+.quick-tags {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.tag-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.tag-chip:hover {
+  background: var(--primary-accent);
+  border-color: var(--primary-accent);
+}
+
+/* Stats Counter Section */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 700px;
+  background: rgba(3, 7, 30, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px 30px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+}
+
+.stat-item { text-align: center; }
+
+.stat-item h3 {
+  display: inline;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-accent);
+}
+
+.stat-item span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-accent);
+}
+
+.stat-item p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-stats {
+    flex-direction: column;
+    gap: 16px;
+    border-radius: 20px;
+  }
+  .stat-divider { display: none; }
+}
+
+/* ==========================================================================
+            ------------ planner hero start end--------------
+   ========================================================================== */
+
+   /* ==========================================================================
+            ------------ TRIP SETUP FORM SECTION satrt --------------
+   ========================================================================== */
+/* Main Wrapper Container */
+.expedition-planner {
+  width: 100%;
+  padding: 50px 16px;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+   background: radial-gradient(circle, #569bb9 0%, #35679f 60%, #d4d9dc 100%); 
+}
+
+.planner-box {
+  width: 100%;
+  max-width: 960px;
+}
+
+/* Header Elements */
+.planner-head {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.planner-tag {
+  background: rgba(0, 180, 216, 0.15);
+  color: #00b4d8;
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  padding: 5px 14px;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.planner-head h2 {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  font-weight: 800;
+  margin: 0 0 8px 0;
+}
+
+.planner-head p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Form Container Card */
+.planner-form {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* Automatic Responsive Grid */
+.planner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 18px;
+}
+
+.field-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.field-card label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #cbd5e1;
+}
+
+/* Form Inputs & Selects */
+.field-card select {
+  width: 100%;
+  padding: 11px 12px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.field-card select:focus {
+  border-color: #00b4d8;
+}
+
+.field-card select option {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+/* Radio Button Group Pills */
+.radio-pill-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.radio-pill-group label {
+  flex: 1;
+  min-width: 60px;
+}
+
+.radio-pill-group input {
+  display: none;
+}
+
+.radio-pill-group span {
+  display: block;
+  text-align: center;
+  padding: 9px 4px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-pill-group input:checked + span {
+  background: #00b4d8;
+  border-color: #00b4d8;
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
+}
+
+/* Range Slider */
+.range-box input[type="range"] {
+  width: 100%;
+  accent-color: #00b4d8;
+  cursor: pointer;
+}
+
+/* Counter Controls */
+.counter-control {
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  width: 130px;
+  overflow: hidden;
+}
+
+.counter-control button {
+  width: 40px;
+  height: 38px;
+  background: rgba(0, 180, 216, 0.2);
+  border: none;
+  color: #00b4d8;
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.counter-control button:hover {
+  background: #00b4d8;
+  color: #fff;
+}
+
+.counter-control input {
+  width: 50px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+/* Live Budget Display Highlight Card */
+.budget-highlight-card {
+  background: rgba(0, 180, 216, 0.1);
+  border: 1px solid rgba(0, 180, 216, 0.35);
+}
+
+.budget-main {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #00b4d8;
+}
+
+.budget-sub {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+/* Submit Action Button */
+.generate-btn {
+  width: 100%;
+  margin-top: 22px;
+  padding: 15px;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 180, 216, 0.4);
+}
+
+/* Dynamic Output Breakdown Card */
+.output-card {
+  margin-top: 24px;
+  background: #0d1527;
+  border: 1px solid #00b4d8;
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  animation: slideDown 0.3s ease-out;
+}
+
+.output-card h3 {
+  color: #00b4d8;
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.output-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 0.92rem;
+}
+
+.hidden { display: none; }
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 500px) {
+  .planner-form { padding: 18px; }
+  .radio-pill-group { display: grid; grid-template-columns: 1fr 1fr; }
+}
+
+   /* Center Screen Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(3, 7, 30, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+/* Centered Glass Alert Card */
+.modal-card {
+  position: relative;
+  background: #0f172a;
+  border: 1px solid #00b4d8;
+  box-shadow: 0 25px 50px rgba(0, 180, 216, 0.25);
+  border-radius: 20px;
+  padding: 28px 24px;
+  max-width: 460px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  animation: popCenter 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Close Icon Button */
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.modal-close:hover { color: #ffffff; }
+
+/* Content Formatting */
+.modal-content h3 {
+  color: #00b4d8;
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.modal-content div {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+/* Modal Action Button */
+.modal-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: #00b4d8;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal-btn:hover { background: #0096c7; }
+
+.hidden { display: none !important; }
+
+/* Center Popup Animation */
+@keyframes popCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+   /* ==========================================================================
+            ------------ TRIP SETUP FORM SECTION end --------------
+   ========================================================================== */
+
+    /* ==========================================================================
+            ------------ LIVE TRAIL & WEATHER ALERT CARD satrt --------------
+   ========================================================================== */
+/* Outer Container */
+.weather-alert{
+  /* background: radial-gradient(circle, #335855 0%, #4ecbf2 60%, #5e6264 100%); */
+  background-image: url(../images/himaliyas-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+   min-height: 90vh;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.weather-alert-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+    
+}
+
+/* Glassmorphism Card */
+.weather-alert-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Header Elements */
+.alert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-title-box h2 {
+  margin: 8px 0 0 0;
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.live-pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  color: #00b4d8;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 30px;
+  letter-spacing: 0.5px;
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00b4d8;
+  border-radius: 50%;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 180, 216, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 180, 216, 0); }
+}
+
+.trail-update-time {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Dynamic Responsive Grid */
+.weather-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.metric-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.metric-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 180, 216, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.metric-icon {
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.3);
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.metric-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.metric-value-group {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.temp-display, .metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.weather-condition {
+  font-size: 0.88rem;
+  color: #cbd5e1;
+  text-transform: capitalize;
+}
+
+.sub-badge {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 700;
+}
+
+/* Safety Dynamic Glow Classes */
+.metric-item.safety-warning {
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.metric-item.safety-danger {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.metric-item.safety-good {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+}
+
+.safety-status {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+/* Progress Bar & Footer */
+.trail-safety-footer {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.safety-indicator-bar {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #38bdf8, #f59e0b, #ef4444);
+  transition: width 0.5s ease;
+}
+
+.footer-note {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+@media (max-width: 600px) {
+  .weather-alert-card { padding: 20px; }
+  .footer-note { flex-direction: column; gap: 4px; }
+}
+
+    /* ==========================================================================
+            ------------ LIVE TRAIL & WEATHER ALERT CARD end --------------
+   ========================================================================== */
+   
+    /* ==========================================================================
+            ------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start --------------
+   ========================================================================== */
+   /* Container Wrapper */
+.estimator-section {
+  width: 100%;
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Outer Card */
+.estimator-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+  border: 1px solid rgba(0, 180, 216, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+}
+
+/* Header Elements */
+.estimator-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header-badge {
+  display: inline-block;
+  background: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  color: #00b4d8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.estimator-header h2 {
+  margin: 0 0 6px 0;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.estimator-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Currency Toggle Bar */
+.currency-toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.toggle-label {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.currency-btn-group {
+  display: flex;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 3px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.curr-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 6px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.curr-btn.active {
+  background: #00b4d8;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 180, 216, 0.4);
+}
+
+/* Expense List Container */
+.expense-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.expense-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 14px 18px;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+}
+
+.expense-row:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 180, 216, 0.4);
+  transform: translateX(4px);
+}
+
+.expense-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.expense-icon {
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.expense-title {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.expense-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.expense-price-box {
+  text-align: right;
+}
+
+.expense-amount {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #00b4d8;
+}
+
+/* Total Highlight Footer Card */
+.total-summary-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.15), rgba(0, 119, 182, 0.25));
+  border: 1px solid rgba(0, 180, 216, 0.5);
+  padding: 20px 24px;
+  border-radius: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.summary-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.total-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #cbd5e1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.total-subtext {
+  font-size: 0.78rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.total-amount-display span {
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: #00b4d8;
+  text-shadow: 0 0 15px rgba(0, 180, 216, 0.4);
+}
+
+/* Responsive Mobile Rules */
+@media (max-width: 550px) {
+  .estimator-card { padding: 18px; }
+  .expense-row { padding: 12px; }
+  .expense-desc { display: none; } /* Mobile par description hides for clean look */
+  .total-summary-card { flex-direction: column; align-items: flex-start; }
+  .total-amount-display { align-self: flex-end; }
+}
+    /* ==========================================================================
+            ------------  MOUNTAIN EXPENSE ESTIMATOR SECTION end --------------
+   ========================================================================== */
+   /* ==========================================================================
+                 ESSENTIAL MOUNTAIN GEAR CHECKLISTstart 
+   ========================================================================== */
+   /* Container Wrapper */
+.checklist-section {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Outer Card */
+.checklist-card {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.9));
+  border: 1px solid rgba(0, 180, 216, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+}
+
+/* Header & Progress Elements */
+.checklist-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.header-badge {
+  display: inline-block;
+  background: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.4);
+  color: #00b4d8;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.checklist-header h2 {
+  margin: 0 0 6px 0;
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  font-weight: 800;
+  color: #f8fafc;
+}
+
+.checklist-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0 0 20px 0;
+}
+
+/* Progress Bar Box */
+.checklist-progress-box {
+  max-width: 500px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 12px 16px;
+  border-radius: 12px;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.progress-title { color: #94a3b8; }
+.progress-count { color: #00b4d8; }
+
+.progress-track {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00b4d8, #10b981);
+  transition: width 0.35s ease;
+}
+
+/* 2-Column Grid Layout */
+.gear-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.gear-column {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.column-icon {
+  font-size: 1.3rem;
+}
+
+.column-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+/* List Styling */
+.gear-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gear-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.gear-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(0, 180, 216, 0.3);
+}
+
+/* Custom Checkbox Design */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: #00b4d8;
+  border-color: #00b4d8;
+  box-shadow: 0 0 10px rgba(0, 180, 216, 0.4);
+}
+
+.checkmark:after {
+  content: "";
+  display: none;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-bottom: 2px;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.gear-name {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.custom-checkbox input:checked ~ .gear-name {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+/* Responsive Mobile Rules */
+@media (max-width: 700px) {
+  .gear-grid-container {
+    grid-template-columns: 1fr; /* 2-column shifts to 1-column on mobile */
+    gap: 16px;
+  }
+
+  .checklist-card {
+    padding: 20px 16px;
+  }
+}
+   /* ==========================================================================
+                 ESSENTIAL MOUNTAIN GEAR CHECKLIST end
+   ========================================================================== */
+ 

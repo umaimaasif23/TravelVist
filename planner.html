@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/plenner.css">
+    <title>Document</title>
+</head>
+<body>
+    
+
+           <!-----------------------------navbar section start--------------------------------->
+
+ <!-- Yahan JavaScript dynamic navbar load karega -->
+    <div id="navbar-container"></div>
+
+    <main>
+
+
+<!-----------------------------navbar section end--------------------------------->
+
+<!--------------------------------- Hero Section Wrapper start---------------------------------------->
+<!--------------------------------- Hero Section Wrapper ---------------------------------------->
+
+<section class="hero-section">
+  <!-- Dynamic Video or High-Res Image Background -->
+  <div class="hero-bg-overlay"></div>
+  
+  <div class="hero-container">
+    
+    <!-- Hero Text Content -->
+    <div class="hero-content">
+      <span class="badge-pill">🏔️ Premier Mountain Travel Planner</span>
+      <h1 class="hero-title">
+        Plan Your Ultimate <br />
+        <span class="highlight-text">Mountain Expedition</span>
+      </h1>
+      <p class="hero-subtitle">
+        Tailor-made itineraries, certified guides, and real-time trail data. 
+        Conquer majestic peaks safely with expert planning.
+      </p>
+    </div>
+
+    <!-- Advanced Floating Glassmorphism Search Panel -->
+    <div class="glass-search-card">
+      <form id="heroPlannerForm" autocomplete="off">
+        <div class="form-grid">
+          
+          <!-- Input 1: Trail / Peak Search with Autocomplete Dropdown -->
+          <div class="field-group">
+            <label for="trailInput">Destination / Peak</label>
+            <div class="input-wrapper">
+              <span class="field-icon">📍</span>
+              <input 
+                type="text" 
+                id="trailInput" 
+                placeholder="Where to? (e.g., K2, Concordia)" 
+                required 
+              />
+            </div>
+            <!-- Suggestions Dropdown Box -->
+            <div id="suggestionsBox" class="suggestions-dropdown hidden"></div>
+          </div>
+
+          <!-- Input 2: Difficulty Level Picker -->
+          <div class="field-group">
+            <label for="difficultySelect">Difficulty Grade</label>
+            <div class="input-wrapper">
+              <span class="field-icon">🧗‍♂️</span>
+              <select id="difficultySelect" required>
+                <option value="" disabled selected>Choose Level</option>
+                <option value="beginner">🟢 Beginner (Gentle Slopes)</option>
+                <option value="moderate">🔵 Moderate (Trek & Hike)</option>
+                <option value="advanced">🔴 Advanced (High Altitude)</option>
+                <option value="extreme">🟣 Extreme (Technical Peak)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Input 3: Duration / Days Slider -->
+          <div class="field-group">
+            <label for="durationInput">Max Duration: <span id="durationVal">7</span> Days</label>
+            <div class="input-wrapper range-wrapper">
+              <input 
+                type="range" 
+                id="durationInput" 
+                min="1" 
+                max="30" 
+                value="7" 
+              />
+            </div>
+          </div>
+
+          <!-- Submit Action Button -->
+          <div class="field-group btn-group">
+            <button type="submit" id="searchSubmitBtn" class="primary-btn">
+              <span>Explore Trails</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18">
+                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </form>
+
+      <!-- Popular Quick Filters (Tags) -->
+      <div class="quick-tags">
+        <span>Popular:</span>
+        <button class="tag-chip" data-tag="Rakaposhi Basecamp">Rakaposhi</button>
+        <button class="tag-chip" data-tag="K2 Basecamp">K2 Basecamp</button>
+        <button class="tag-chip" data-tag="Fairy Meadows">Fairy Meadows</button>
+      </div>
+    </div>
+
+    <!-- Live Metrics Counter Strip -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <h3 class="counter" data-target="150">0</h3><span>+</span>
+        <p>Curated Trails</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="4900">0</h3><span>m</span>
+        <p>Max Elevation</p>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <h3 class="counter" data-target="98">0</h3><span>%</span>
+        <p>Safety Score</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!--------------------------------- Hero Section Wrapper ---------------------------------------->
+<!--------------------------------- Hero Section Wrapper end---------------------------------------->
+
+<!------------------------------------ TRIP SETUP FORM SECTION satrt ------------------------------->
+<!------------------------------------ TRIP SETUP FORM SECTION satrt ------------------------------->
+<section class="expedition-planner">
+  <div class="planner-box">
+    
+    <div class="planner-head">
+      <span class="planner-tag">🏔️ TravelVista Expedition Engine</span>
+      <h2>Build Your Mountain Expedition</h2>
+      <p>Configure parameters to get real-time cost estimates & custom trail plans.</p>
+    </div>
+
+    <form id="expeditionForm" class="planner-form" autocomplete="off">
+      <div class="planner-grid">
+
+        <!-- 1. Destination Picker -->
+        <div class="field-card">
+          <label for="destSelect">📍 Destination / Peak</label>
+          <select id="destSelect" required>
+            <option value="" disabled selected>Select Mountain Peak</option>
+            <option value="K2 Basecamp" data-base="950">K2 Basecamp (8,611m)</option>
+            <option value="Rakaposhi Trek" data-base="420">Rakaposhi Basecamp (7,788m)</option>
+            <option value="Fairy Meadows" data-base="310">Fairy Meadows & Nanga Parbat</option>
+            <option value="Concordia Trail" data-base="850">Concordia Trek (Karakoram)</option>
+            <option value="Rush Lake Peak" data-base="380">Rush Lake (High Altitude Lake)</option>
+          </select>
+        </div>
+
+        <!-- 2. Difficulty Grade -->
+        <div class="field-card">
+          <label>⛰️ Route Difficulty</label>
+          <div class="radio-pill-group">
+            <label><input type="radio" name="difficulty" value="Easy" data-mult="1" checked><span>Easy</span></label>
+            <label><input type="radio" name="difficulty" value="Moderate" data-mult="1.2"><span>Moderate</span></label>
+            <label><input type="radio" name="difficulty" value="Advanced" data-mult="1.45"><span>Advanced</span></label>
+            <label><input type="radio" name="difficulty" value="Extreme" data-mult="1.75"><span>Extreme</span></label>
+          </div>
+        </div>
+
+        <!-- 3. Trip Duration Slider -->
+        <div class="field-card">
+          <label for="tripDays">📅 Duration: <strong id="daysDisplay">7</strong> Days</label>
+          <div class="range-box">
+            <input type="range" id="tripDays" min="3" max="21" value="7">
+          </div>
+        </div>
+
+        <!-- 4. Climbers Group Counter -->
+        <div class="field-card">
+          <label>👤 Group Size (Climbers)</label>
+          <div class="counter-control">
+            <button type="button" id="subClimber">−</button>
+            <input type="number" id="climberCount" value="1" min="1" max="15" readonly>
+            <button type="button" id="addClimber">+</button>
+          </div>
+        </div>
+
+        <!-- 5. Gear & Expedition Tier -->
+        <div class="field-card">
+          <label for="packageTier">🏕️ Expedition Package Tier</label>
+          <select id="packageTier">
+            <option value="Standard Camping" data-tier="25">Standard Camping (Basic Tents)</option>
+            <option value="Alpine Lodge" data-tier="60">Alpine Lodge & Huts</option>
+            <option value="All-Inclusive Pro" data-tier="120">Pro Expeditions (Porters + High-Altitude Gear)</option>
+          </select>
+        </div>
+
+        <!-- 6. Real-Time Dynamic Budget Output -->
+        <div class="field-card budget-highlight-card">
+          <label>💰 Estimated Total Cost</label>
+          <div class="budget-main">$<span id="liveBudget">0</span></div>
+          <span class="budget-sub" id="personCostLabel">$0 / climber</span>
+        </div>
+
+      </div>
+
+      <button type="submit" class="generate-btn">
+        <span>🚀 Generate Detailed Expedition Plan</span>
+      </button>
+    </form>
+
+    <!-- Detailed Plan Output Display -->
+    <div id="planOutput" class="output-card hidden"></div>
+
+  </div>
+</section>
+
+<!-- CENTER SCREEN ALERT MODAL -->
+<div id="alertModal" class="modal-overlay hidden">
+  <div class="modal-card">
+    <button type="button" id="closeModalBtn" class="modal-close">&times;</button>
+    <div id="modalBody" class="modal-content">
+      <!-- JavaScript data yahan add karega -->
+    </div>
+    <button type="button" id="modalOkBtn" class="modal-btn">Got it & Continue</button>
+  </div>
+</div>
+
+<!------------------------------------ TRIP SETUP FORM SECTION end ------------------------------->
+<!------------------------------------ TRIP SETUP FORM SECTION end ------------------------------->
+
+<!------------------------------------ LIVE TRAIL & WEATHER ALERT CARD start ------------------------------->
+<!------------------------------------ LIVE TRAIL & WEATHER ALERT CARD start ------------------------------->
+<!-- MAIN LIVE TRAIL & WEATHER ALERT -->
+ <div class="weather-alert">
+<section class="weather-alert-section">
+  <div class="weather-alert-card">
+    
+    <!-- Top Header & Live Pulse Badge -->
+    <div class="alert-card-header">
+      <div class="header-title-box">
+        <span class="live-pulse-badge">
+          <span class="pulse-dot"></span> LIVE TRAIL STATUS
+        </span>
+        <h2>Real-time Karakoram Conditions</h2>
+      </div>
+      <span id="updateTime" class="trail-update-time">Fetching data...</span>
+    </div>
+
+    <!-- Main Metrics Grid -->
+    <div class="weather-metrics-grid">
+      
+      <!-- Metric 1: Temperature & Forecast -->
+      <div class="metric-item weather-main">
+        <div class="metric-icon">🌤️</div>
+        <div class="metric-details">
+          <span class="metric-label">Expected Weather</span>
+          <div class="metric-value-group">
+            <span id="liveTemp" class="temp-display">--°C</span>
+            <span id="liveCondition" class="weather-condition">Loading weather...</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 2: Max Elevation -->
+      <div class="metric-item elevation-main">
+        <div class="metric-icon">⛰️</div>
+        <div class="metric-details">
+          <span class="metric-label">Max Elevation</span>
+          <div class="metric-value-group">
+            <span class="metric-value">4,200m</span>
+            <span class="sub-badge">High Altitude</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Metric 3: Safety Level Alert -->
+      <div class="metric-item safety-alert-main warning" id="safetyCardBox">
+        <div class="metric-icon">⚠️</div>
+        <div class="metric-details">
+          <span class="metric-label">Safety Level</span>
+          <div class="metric-value-group">
+            <span id="liveSafety" class="safety-status">Checking Winds...</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Altitude & Safety Progress Bar -->
+    <div class="trail-safety-footer">
+      <div class="safety-indicator-bar">
+        <div id="safetyBarFill" class="bar-fill" style="width: 65%;"></div>
+      </div>
+      <div class="footer-note">
+        <span>📍 Region: Skardu / K2 Basecamp Trail</span>
+        <span id="liveWind">Wind speed: -- km/h</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+</div>
+<!------------------------------------ LIVE TRAIL & WEATHER ALERT CARD end ------------------------------->
+<!------------------------------------ LIVE TRAIL & WEATHER ALERT CARD end ------------------------------->
+
+<!------------------------------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start ------------------------------->
+<!------------------------------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start ------------------------------->
+<!-- MOUNTAIN EXPENSE ESTIMATOR SECTION -->
+<section class="estimator-section">
+  <div class="estimator-card">
+    
+    <!-- Section Header -->
+    <div class="estimator-header">
+      <div class="header-badge">💰 Budget Breakdown Engine</div>
+      <h2>Mountain Expense Estimator</h2>
+      <p>Estimate essential costs for high-altitude Karakoram expeditions.</p>
+    </div>
+
+    <!-- Currency Toggle Controls -->
+    <div class="currency-toggle-bar">
+      <span class="toggle-label">Currency:</span>
+      <div class="currency-btn-group">
+        <button type="button" class="curr-btn active" data-curr="USD">USD ($)</button>
+        <button type="button" class="curr-btn" data-curr="PKR">PKR (Rs)</button>
+      </div>
+    </div>
+
+    <!-- Breakdown Items List -->
+    <div class="expense-items-container">
+      
+      <!-- Expense 1: Gear & Permits -->
+      <div class="expense-row" data-usd="250">
+        <div class="expense-info">
+          <span class="expense-icon">🎟️</span>
+          <div>
+            <span class="expense-title">Gear & Permits</span>
+            <small class="expense-desc">National park permits & climbing gear access</small>
+          </div>
+        </div>
+        <div class="expense-price-box">
+          <span class="expense-amount" data-base="250">$250</span>
+        </div>
+      </div>
+
+      <!-- Expense 2: Guide & Porters -->
+      <div class="expense-row" data-usd="300">
+        <div class="expense-info">
+          <span class="expense-icon">🏔️</span>
+          <div>
+            <span class="expense-title">Guide & Porters</span>
+            <small class="expense-desc">Licensed mountain guide & porter support</small>
+          </div>
+        </div>
+        <div class="expense-price-box">
+          <span class="expense-amount" data-base="300">$300</span>
+        </div>
+      </div>
+
+      <!-- Expense 3: Lodge / Camping -->
+      <div class="expense-row" data-usd="150">
+        <div class="expense-info">
+          <span class="expense-icon">🏕️</span>
+          <div>
+            <span class="expense-title">Lodge / Camping</span>
+            <small class="expense-desc">Basecamp tenting & high-altitude huts</small>
+          </div>
+        </div>
+        <div class="expense-price-box">
+          <span class="expense-amount" data-base="150">$150</span>
+        </div>
+      </div>
+
+      <!-- Expense 4: Food & Supplies -->
+      <div class="expense-row" data-usd="100">
+        <div class="expense-info">
+          <span class="expense-icon">🍲</span>
+          <div>
+            <span class="expense-title">Food & Supplies</span>
+            <small class="expense-desc">High-energy meals & water purification</small>
+          </div>
+        </div>
+        <div class="expense-price-box">
+          <span class="expense-amount" data-base="100">$100</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Total Cost Highlight Card -->
+    <div class="total-summary-card">
+      <div class="summary-meta">
+        <span class="total-label">Total Estimated Cost</span>
+        <span class="total-subtext">Estimated per trekker / climber</span>
+      </div>
+      <div class="total-amount-display">
+        <span id="grandTotal">$800</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!------------------------------------ MOUNTAIN EXPENSE ESTIMATOR SECTION end ------------------------------->
+<!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLISTstart ------------------------------------->
+<!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLISTstart ------------------------------------->
+<!-- ESSENTIAL MOUNTAIN GEAR CHECKLIST -->
+<section class="checklist-section">
+  <div class="checklist-card">
+    
+    <!-- Section Header -->
+    <div class="checklist-header">
+      <div class="header-badge">🎒 Expedition Readiness</div>
+      <h2>Essential Mountain Gear Checklist</h2>
+      <p>Ensure you are fully packed before taking on high-altitude trails.</p>
+
+      <!-- Dynamic Progress Tracker -->
+      <div class="checklist-progress-box">
+        <div class="progress-labels">
+          <span class="progress-title">Packing Progress</span>
+          <span id="checklistCounter" class="progress-count">0 / 8 Packed</span>
+        </div>
+        <div class="progress-track">
+          <div id="checklistProgressBar" class="progress-bar-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2-Column Side-by-Side Grid Layout -->
+    <div class="gear-grid-container">
+      
+      <!-- COLUMN 1: Climbing & Trekking -->
+      <div class="gear-column">
+        <div class="column-header">
+          <span class="column-icon">🧗‍♂️</span>
+          <h3>Climbing & Trekking</h3>
+        </div>
+
+        <ul class="gear-list">
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check" checked>
+              <span class="checkmark"></span>
+              <span class="gear-name">Waterproof Jacket</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">Hiking Poles</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">Sleeping Bag</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">Trekking Boots</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 2: Personal & Safety -->
+      <div class="gear-column">
+        <div class="column-header">
+          <span class="column-icon">🩺</span>
+          <h3>Personal & Safety</h3>
+        </div>
+
+        <ul class="gear-list">
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check" checked>
+              <span class="checkmark"></span>
+              <span class="gear-name">First Aid Kit</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">Thermal Layers</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">Headlamp & Batteries</span>
+            </label>
+          </li>
+          <li class="gear-item">
+            <label class="custom-checkbox">
+              <input type="checkbox" class="gear-check">
+              <span class="checkmark"></span>
+              <span class="gear-name">High-Calorie Snacks</span>
+            </label>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLIST end ------------------------------------->
+<!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLIST end ------------------------------------->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="./js/planner.js"></script>
+    <script src="./js/common.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mountain Destinations</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/mountains.css">
+</head>
+<body>
+
+    <!-- Dynamic Navbar -->
+    <div id="navbar-container"></div>
+
+
+         <!------------------------- 1. Hero Section ------------------------->
+        <!------------------------- 1. Hero Section ------------------------->
+
+<section class="mountains-hero">
+    <!-- Background Video -->
+    <video class="hero-video-bg" autoplay loop muted playsinline>
+      
+        <source src="./images/hero-bg-video.mp4" type="video/mp4" />
+     
+    </video>
+
+    <!-- Dark Overlay for better text readability -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="mountains-hero-content">
+        <span>EXPLORE</span>
+        <h1>Discover Mountain Destinations</h1>
+        <p>From peaceful valleys to challenging peaks, find your next adventure.</p>
+    </div>
+</section>
+
+
+<!-------------------------javescript--------------------------->
+<script>
+const heroVideo = document.querySelector('.hero-video-bg');
+
+if (heroVideo) {
+  heroVideo.addEventListener('timeupdate', function () {
+    // jab video khatam hone se 0.15s door ho, toh start par jump kar jaye
+    const buffer = 0.15; 
+    if (this.currentTime > this.duration - buffer) {
+      this.currentTime = 0;
+      this.play();
+    }
+  });
+}
+</script>
+      <!------------------------- 2. Search & Filter Bar ------------------------->
+        <!------------------------- 2. Search & Filter Bar ------------------------->
+        <section class="filter-section">
+            <div class="filter-container">
+                
+                <!-- Search Box -->
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="Search mountain or valley name..." 
+                        autocomplete="off"
+                    >
+                    <span class="search-icon">🔍</span>
+                </div>
+
+                <!-- Difficulty Filter Dropdown -->
+                <div class="filter-dropdown">
+                    <select id="difficultySelect">
+                        <option value="all">All Difficulty Levels</option>
+                        <option value="easy">Easy (Beginner Friendly)</option>
+                        <option value="moderate">Moderate Trek</option>
+                        <option value="extreme">Extreme Expedition</option>
+                    </select>
+                </div>
+
+                <!-- Region Filter Dropdown -->
+                <div class="filter-dropdown">
+                    <select id="regionSelect">
+                        <option value="all">All Regions</option>
+                        <option value="gilgit">Gilgit-Baltistan</option>
+                        <option value="hunza">Hunza Valley</option>
+                        <option value="skardu">Skardu</option>
+                         <option value="Tyrol, Italy">Italy</option>
+                          <option value="Alberta, Canada">Canada</option>
+                           <option value="Nordland, Norway">Norway</option>
+                        <option value="khyber">Khyber Pakhtunkhwa</option>
+                    </select>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!------------------------- 3. Mountain Cards Grid Section ------------------------->
+        <section class="mountains-grid-section py-5">
+            <div class="container">
+                <div class="row" id="mountainsGrid">
+                    <!-- JavaScript dynamic cards yahan insert karega -->
+                </div>
+            </div>
+        </section>
+
+        <!------------------------- 4. Trek Booking Modal ------------------------->
+
+
+        <div class="modal fade" id="trekModal" tabindex="-1" aria-labelledby="trekModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-dark text-light border-secondary">
+                    
+                    <div class="modal-header border-bottom border-secondary">
+                        <h5 class="modal-title fw-bold text-info" id="trekModalLabel">Trek Booking</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body p-4">
+                        <!-- Trek Details Overview -->
+                        <div class="row g-3 mb-4 text-center bg-secondary bg-opacity-25 rounded p-3">
+                            <div class="col-4">
+                                <small class="text-muted d-block">Location</small>
+                                <span id="modalLocation" class="fw-semibold text-capitalize">-</span>
+                            </div>
+                            <div class="col-4">
+                                <small class="text-muted d-block">Duration</small>
+                                <span id="modalDuration" class="fw-semibold">-</span>
+                            </div>
+                            <div class="col-4">
+                                <small class="text-muted d-block">Elevation</small>
+                                <span id="modalElevation" class="fw-semibold">-</span>
+                            </div>
+                        </div>
+
+                        <p id="modalDescription" class="text-muted mb-4 small"></p>
+
+                        <!-- Booking Form -->
+                        <form id="trekBookingForm">
+                            <div class="row g-3">
+                                
+                                <!-- Date Selection -->
+                                <div class="col-md-6">
+                                    <label for="bookingDate" class="form-label">Trek Start Date</label>
+                                    <input type="date" class="form-control bg-dark text-light border-secondary" id="bookingDate" required>
+                                </div>
+
+                                <!-- Trekkers Count -->
+                                <div class="col-md-6">
+                                    <label for="trekkersCount" class="form-label">Number of Trekkers</label>
+                                    <input type="number" class="form-control bg-dark text-light border-secondary" id="trekkersCount" value="1" min="1" max="10">
+                                </div>
+
+                                <!-- Gear Addon Option -->
+                                <div class="col-12 mt-3">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gearAddon">
+                                        <label class="form-check-label text-light" for="gearAddon">
+                                            Include Rental Trekking Gear Kit (+$250 per person)
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Total Price Summary -->
+                                <div class="col-12 mt-4 pt-3 border-top border-secondary d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="text-muted d-block">Total Estimated Cost:</span>
+                                        <h3 id="totalBookingPrice" class="fw-bold text-success mb-0">$1,500</h3>
+                                    </div>
+                                    <button type="submit" class="btn btn-info px-4 fw-semibold">Confirm Booking</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<!-------------------------------------- Mountain Map Section Start ------------------------------------>
+<!-------------------------------------- Mountain Map Section Start ------------------------------------>
+
+\
+<section class="adv-map-section">
+    <div class="adv-map-header">
+        <span>SATELLITE & TOPOGRAPHY MAP</span>
+        <h2>Explore High Altitude Trails</h2>
+        <p>Interactive real-world topography map. Drag, zoom, and tap peak nodes to view expedition data.</p>
+    </div>
+
+    <div class="adv-map-wrapper">
+        <!-- Real Leaflet Map Container -->
+        <div id="leafletMap"></div>
+    </div>
+</section>
+
+<!-------------------------------------- Mountain Map Section End ------------------------------------>
+<!-------------------------------------- Mountain Map Section End ------------------------------------>
+
+<!-------------------------------------- Pro Altitude & AMS Calculator start------------------------------------>
+<!-------------------------------------- Pro Altitude & AMS Calculator start------------------------------------>
+<section class="pro-calc-section">
+    <div class="pro-calc-header">
+        <span>PHYSIOLOGICAL ACCLIMATIZATION TOOL</span>
+        <h2>Pro Expedition & AMS Risk Calculator</h2>
+        <p>Scientific altitude readiness calculator based on barometric oxygen degradation & past acclimatization.</p>
+    </div>
+
+    <div class="pro-calc-grid">
+        <!-- Control Form -->
+        <div class="pro-calc-form">
+            <div class="input-block">
+                <label>Fitness Tier</label>
+                <select id="proFitness">
+                    <option value="1">Level 1 - Beginner (Walking/Occasional Hikes)</option>
+                    <option value="2" selected>Level 2 - Intermediate (Regular Cardio/Endurance)</option>
+                    <option value="3">Level 3 - Pro Mountaineer / Elite Athlete</option>
+                </select>
+            </div>
+
+            <div class="input-block">
+                <label>Max Past Altitude: <span id="pastAltVal">3500m</span></label>
+                <input type="range" id="proPastAlt" min="1000" max="8848" step="100" value="3500">
+            </div>
+
+            <div class="input-block">
+                <label>Target Expedition Peak</label>
+                <select id="proTargetPeak">
+                    <option value="6106">Passu Cones (6,106m) - Karakoram</option>
+                    <option value="7788" selected>Rakaposhi Summit (7,788m) - Nagar</option>
+                    <option value="8126">Nanga Parbat Basecamp (8,126m) - Himalayas</option>
+                    <option value="8611">K2 Basecamp (8,611m) - Savage Mountain</option>
+                </select>
+            </div>
+
+            <div class="input-block">
+                <label>Acclimatization Rest Days Planned: <span id="acclimVal">3 Days</span></label>
+                <input type="range" id="proAcclim" min="1" max="10" step="1" value="3">
+            </div>
+        </div>
+
+        <!-- Dashboard Result Cards -->
+        <div class="pro-calc-dashboard">
+            <!-- Score Gauge -->
+            <div class="gauge-card">
+                <div class="svg-gauge">
+                    <svg viewBox="0 0 120 120">
+                        <circle class="gauge-bg" cx="60" cy="60" r="50"></circle>
+                        <circle class="gauge-fill" id="gaugeCircle" cx="60" cy="60" r="50"></circle>
+                    </svg>
+                    <div class="gauge-text">
+                        <span id="scoreNum">0%</span>
+                        <small>Safety Index</small>
+                    </div>
+                </div>
+                <div id="riskStatusBadge" class="risk-badge">Calculating...</div>
+            </div>
+
+            <!-- Physiological Live Metrics -->
+            <div class="metrics-card">
+                <div class="metric-item">
+                    <span>Est. Oxygen Level ($O_2$)</span>
+                    <strong id="oxLevelVal">48%</strong>
+                    <div class="meter-bar"><div id="oxBar" style="width: 48%;"></div></div>
+                </div>
+                <div class="metric-item">
+                    <span>AMS (Altitude Sickness) Risk</span>
+                    <strong id="amsRiskVal">Moderate</strong>
+                    <div class="meter-bar"><div id="amsBar" style="width: 40%; background: #f59e0b;"></div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-------------------------------------- Pro Altitude & AMS Calculator end  ------------------------------------>
+<!-------------------------------------- Pro Altitude & AMS Calculator end------------------------------------>
+
+<!-------------------------------------- Day-by-Day Expedition Itinerary  start------------------------------------>
+<!-------------------------------------- Day-by-Day Expedition Itinerary start------------------------------------>
+<section class="itinerary-section">
+    <div class="itinerary-header">
+        <span>EXPEDITION ROUTE & SCHEDULE</span>
+        <h2>10-Day K2 Basecamp Expedition Itinerary</h2>
+        <p>Explore the step-by-step breakdown of altitude progression, acclimatization days, and key trekking landmarks.</p>
+    </div>
+
+    <div class="accordion-container" id="itineraryAccordion">
+        
+        <!-- Day 1 -->
+        <div class="accordion-item active">
+            <button class="accordion-header">
+                <div class="day-badge">Day 01</div>
+                <div class="header-info">
+                    <h3>Arrival in Skardu & Briefing</h3>
+                    <span class="alt-tag">Elevation: 2,228m</span>
+                </div>
+                <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+                <div class="content-body">
+                    <p>Fly into Skardu airport with stunning views of Nanga Parbat. Full equipment check, gear inspection, and official expedition safety briefing with certified Karakoram guides.</p>
+                    <ul class="highlights-list">
+                        <li><strong>Stay:</strong> Mountain Lodge Skardu</li>
+                        <li><strong>Trek Distance:</strong> Rest / Preparation Day</li>
+                        <li><strong>Highlights:</strong> Shangrila Resort & Kachura Lake Visit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <div class="day-badge">Day 02</div>
+                <div class="header-info">
+                    <h3>Skardu to Askole Village (4x4 Jeep Ride)</h3>
+                    <span class="alt-tag">Elevation: 3,000m</span>
+                </div>
+                <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+                <div class="content-body">
+                    <p>Thrilling 4x4 Jeep ride along the Shigar River valley to Askole, the final inhabited village before entering the deep Karakoram wilderness.</p>
+                    <ul class="highlights-list">
+                        <li><strong>Stay:</strong> Riverside Expedition Camp</li>
+                        <li><strong>Drive Time:</strong> 6 - 7 Hours</li>
+                        <li><strong>Highlights:</strong> Shigar Cold Desert & Braldu Gorge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <div class="day-badge">Day 03</div>
+                <div class="header-info">
+                    <h3>Askole to Jhola Camp Trek</h3>
+                    <span class="alt-tag">Elevation: 3,200m</span>
+                </div>
+                <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+                <div class="content-body">
+                    <p>First official foot-trekking day! Cross the Braldu River bridge and march through rugged mountain trails surrounded by towering granite spires.</p>
+                    <ul class="highlights-list">
+                        <li><strong>Stay:</strong> Tented Camp</li>
+                        <li><strong>Trek Distance:</strong> 20 km (6 Hours)</li>
+                        <li><strong>Highlights:</strong> Bakhor Das Peak Views</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 4 (Acclimatization) -->
+        <div class="accordion-item highlight-day">
+            <button class="accordion-header">
+                <div class="day-badge acclim">Day 04</div>
+                <div class="header-info">
+                    <h3>Paiju Camp - Mandatory Acclimatization</h3>
+                    <span class="alt-tag warning">Elevation: 3,450m</span>
+                </div>
+                <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+                <div class="content-body">
+                    <p>Critical rest and body acclimatization day to prevent Acute Mountain Sickness (AMS). Short walk up Paiju Peak ridge for active adaptation.</p>
+                    <ul class="highlights-list">
+                        <li><strong>Stay:</strong> Paiju Camp Base</li>
+                        <li><strong>Activity:</strong> Acclimatization Hike & Health Checks</li>
+                        <li><strong>Highlights:</strong> First Sight of Baltoro Glacier snout</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <div class="day-badge">Day 05</div>
+                <div class="header-info">
+                    <h3>Paiju to Concordia (The Throne Room)</h3>
+                    <span class="alt-tag">Elevation: 4,600m</span>
+                </div>
+                <span class="accordion-icon"><i class="fa-solid fa-chevron-down"></i></span>
+            </button>
+            <div class="accordion-content">
+                <div class="content-body">
+                    <p>Reach Concordia, where the Baltoro Glacier meets the Godwin-Austen Glacier. Surrounded by 4 of the world’s 14 highest 8,000m peaks.</p>
+                    <ul class="highlights-list">
+                        <li><strong>Stay:</strong> Glacier High Camp</li>
+                        <li><strong>Trek Distance:</strong> 18 km (7 Hours)</li>
+                        <li><strong>Highlights:</strong> 360° Views of K2, Broad Peak & Gasherbrum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-------------------------------------- Day-by-Day Expedition Itinerary end ------------------------------------>
+<!-------------------------------------- Day-by-Day Expedition Itinerary end------------------------------------>
+
+
+<!-------------------------------------- Pro Budget & Gear Estimator start------------------------------------>
+<!-------------------------------------- Pro Budget & Gear Estimator ------------------------------------>
+<section class="pro-budget-section">
+    <div class="pro-budget-header">
+        <span>EXPEDITION FINANCIAL ESTIMATOR</span>
+        <h2>Pro Trip Budget & Gear Estimator</h2>
+        <p>Calculate live expedition costs, gear rentals, and group volume discounts in real time.</p>
+    </div>
+
+    <div class="pro-budget-container">
+        <!-- Input Form Side -->
+        <div class="pro-budget-form">
+            
+            <!-- Group Size Slider -->
+            <div class="form-group">
+                <div class="label-row">
+                    <label for="groupSize">Group Size</label>
+                    <span id="groupSizeVal" class="badge-val">2 Trekkers</span>
+                </div>
+                <input type="range" id="groupSize" min="1" max="12" value="2" step="1">
+            </div>
+
+            <!-- Trip Days Slider -->
+            <div class="form-group">
+                <div class="label-row">
+                    <label for="tripDays">Expedition Duration</label>
+                    <span id="tripDaysVal" class="badge-val">7 Days</span>
+                </div>
+                <input type="range" id="tripDays" min="3" max="21" value="7" step="1">
+            </div>
+
+            <!-- Service Tier -->
+            <div class="form-group">
+                <label for="expTier">Expedition Service Level</label>
+                <select id="expTier">
+                    <option value="50">Standard Trek (Basic Porter & Meals) - $50/day</option>
+                    <option value="90" selected>Pro Expedition (Full Guide, Cook & Mess Tent) - $90/day</option>
+                    <option value="150">VIP Helicopter Support Package - $150/day</option>
+                </select>
+            </div>
+
+            <!-- Gear Rental Grid -->
+            <div class="form-group">
+                <label>Gear Rentals (Per Person / Day)</label>
+                <div class="gear-grid">
+                    <label class="gear-card">
+                        <input type="checkbox" class="gear-check" value="5" checked>
+                        <div class="gear-info">
+                            <span>Down Jacket (-20°C)</span>
+                            <small>+$5/day</small>
+                        </div>
+                    </label>
+
+                    <label class="gear-card">
+                        <input type="checkbox" class="gear-check" value="8" checked>
+                        <div class="gear-info">
+                            <span>Ice Crampons & Axe</span>
+                            <small>+$8/day</small>
+                        </div>
+                    </label>
+
+                    <label class="gear-card">
+                        <input type="checkbox" class="gear-check" value="12">
+                        <div class="gear-info">
+                            <span>4-Season Alpine Tent</span>
+                            <small>+$12/day</small>
+                        </div>
+                    </label>
+
+                    <label class="gear-card">
+                        <input type="checkbox" class="gear-check" value="15">
+                        <div class="gear-info">
+                            <span>Garmin Satellite GPS</span>
+                            <small>+$15/day</small>
+                        </div>
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Live Invoice Card -->
+        <div class="pro-invoice-card">
+            <div class="invoice-header">
+                <span class="invoice-badge">Estimated Invoice</span>
+                <span id="discountBadge" class="discount-badge">-5% Group Discount</span>
+            </div>
+
+            <div class="price-display">
+                <span class="price-label">Total Estimated Cost</span>
+                <h3 id="totalCostVal">$1,442</h3>
+                <span id="perPersonVal" class="per-person">($721 per trekker)</span>
+            </div>
+
+            <div class="invoice-details">
+                <div class="invoice-row">
+                    <span>Base Expedition Fee</span>
+                    <strong id="baseFeeVal">$1,260</strong>
+                </div>
+                <div class="invoice-row">
+                    <span>Gear Rentals Total</span>
+                    <strong id="gearFeeVal">$182</strong>
+                </div>
+                <div class="invoice-row highlight">
+                    <span>Applied Discount</span>
+                    <strong id="discountVal">-$76</strong>
+                </div>
+            </div>
+
+            <button class="checkout-btn">Proceed to Booking</button>
+        </div>
+    </div>
+</section>
+<!-------------------------------------- Pro Budget & Gear Estimator ------------------------------------>
+<!-------------------------------------- Pro Budget & Gear Estimator end------------------------------------>
+
+<!-------------------------------------- Booking Modal Popup start------------------------------------>
+<!-------------------------------------- Booking Modal Popup start------------------------------------>
+<div class="booking-modal-overlay" id="bookingModal">
+    <div class="booking-modal-card">
+        <!-- Close Button -->
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Close Modal">&times;</button>
+
+        <!-- Header & Live Cost Banner -->
+        <div class="modal-header">
+            <span>TRAVEL EASE RESERVATION</span>
+            <h2>Confirm Your Expedition</h2>
+            
+            <div class="modal-summary-box">
+                <div class="summary-item">
+                    <small>Calculated Total</small>
+                    <h3 id="modalTotalCost">$0</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Body -->
+        <form class="modal-form" id="expeditionForm">
+            <div class="modal-form-row">
+                <div class="modal-field">
+                    <label for="leadName">Full Name</label>
+                    <input type="text" id="leadName" placeholder="e.g. Sara Khan" required>
+                </div>
+                <div class="modal-field">
+                    <label for="leadEmail">Email Address</label>
+                    <input type="email" id="leadEmail" placeholder="sara@example.com" required>
+                </div>
+            </div>
+
+            <div class="modal-form-row">
+                <div class="modal-field">
+                    <label for="leadPhone">Phone / WhatsApp</label>
+                    <input type="tel" id="leadPhone" placeholder="+92 300 1234567" required>
+                </div>
+                <div class="modal-field">
+                    <label for="startDate">Preferred Start Date</label>
+                    <input type="date" id="startDate" required>
+                </div>
+            </div>
+
+            <div class="modal-field">
+                <label for="specialReq">Special Medical / Gear Requirements</label>
+                <textarea id="specialReq" rows="3" placeholder="Dietary needs, health conditions, altitude history..."></textarea>
+            </div>
+
+            <button type="submit" class="modal-submit-btn">Confirm & Submit Request</button>
+        </form>
+    </div>
+</div>
+<!-------------------------------------- Booking Modal Popup end------------------------------------>
+<!-------------------------------------- Booking Modal Popup end----------------------------------->
+
+<!-------------------------------------- Mountain Page Footer start ------------------------------------>
+<!-------------------------------------- Mountain Page Footer ------------------------------------>
+<footer class="main-footer">
+    <div class="footer-container">
+        <!-- Column 1: Brand Info -->
+        <div class="footer-col brand-col">
+            <h2 class="footer-logo">Travel<span>Vista</span></h2>
+            <p>Your premier partner for extreme altitude expeditions, alpine trekking, and high-altitude adventures across the Karakoram & Himalayan ranges.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="about.html">About Expedition Guides</a></li>
+                <li><a href="#">Safety & Medical Protocols</a></li>
+                <li><a href="#">Gear Rental Catalog</a></li>
+                <li><a href="#">Weather & Climbing Permits</a></li>
+                <li><a href="#">FAQ & AMS Guidance</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Popular Peaks -->
+        <div class="footer-col">
+            <h3>Expeditions</h3>
+            <ul>
+                <li><a href="#">K2 Basecamp Trek</a></li>
+                <li><a href="#">Nanga Parbat Circuit</a></li>
+                <li><a href="#">Broad Peak Expedition</a></li>
+                <li><a href="#">Concordia & Baltoro Glacier</a></li>
+                <li><a href="#">Rakaposhi Vantage Point</a></li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Newsletter -->
+        <div class="footer-col newsletter-col">
+            <h3>Expedition Updates</h3>
+            <p>Subscribe for upcoming weather forecasts, group slot announcements, and climbing permits news.</p>
+            <form class="footer-newsletter" id="footerNewsletterForm">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 TravelEase Expeditions. All Rights Reserved.</p>
+        <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Safety Disclaimer</a>
+        </div>
+    </div>
+</footer>
+<!-------------------------------------- Mountain Page Footer ------------------------------------>
+<!-------------------------------------- Mountain Page Footer end------------------------------------>
+    <!-- Bootstrap JS & App Scripts -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+     <script src="./js/mountain.js"></script>
+       <script src="./js/mountains.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+    <script src="./js/common.js"></script>
+  
+</body>
+</html>

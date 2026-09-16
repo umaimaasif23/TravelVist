@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/common.css">
+
+    <link rel="stylesheet" href="./css/about.css">
+    <title>About Us | TravelX</title>
+</head>
+<body>
+    
+    <!----------------------------- Navbar Section Start --------------------------------->
+     <!-- Dynamic Navbar -->
+    <div id="navbar-container"></div>
+ <!----------------------------- Navbar Section end --------------------------------->
+
+
+        <!------------------------------- About Hero start---------------------------->
+        <!------------------------------- About Hero start---------------------------->
+                    
+
+        <section id="hero">
+    <div class="hero-container">
+        <!-- Left Text Column -->
+        <div class="hero-text-col">
+            <span>TRAVEL WITH US</span>
+            <h1>Explore The World</h1>
+            <p>
+                Discover breathtaking mountains and unforgettable adventures
+                with our travel experiences.
+            </p>
+            <a href="mountains.html" class="hero-btn">Start Journey</a>
+        </div>
+   
+        <!-- Right Video Column -->
+        <div class="hero-video-col">
+            <div class="video-wrapper">
+                <iframe
+                    id="heroVideo"
+                    src="https://www.youtube.com/embed/_JSlbVqTBlQ?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=_JSlbVqTBlQ&controls=1&rel=0"
+                    title="Travel Ease Hero Video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+                <div class="video-badge">
+                    <span class="pulse-dot"></span> Live Preview
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------------------- About Hero end---------------------------->
+<!------------------------------- About Hero end---------------------------->
+
+
+         <!-------------------------------------- Our Story start ------------------------------------>
+        <!-------------------------------------- Our Story start ------------------------------------>
+        <section class="our-story">
+            <div class="story-image">
+                <img src="./images/mountaine.webp" alt="mountain">
+                <div class="image-shadow"></div>
+            </div>
+
+            <div class="story-text">
+                <span>WHO WE ARE</span>
+                <h2>Your Journey, Our Passion</h2>
+                <p>
+                    We are a travel company dedicated to creating meaningful adventures. From
+                    peaceful mountain escapes to exciting explorations, we help travelers discover
+                    beautiful destinations with comfort and safety.
+                </p>
+            </div>
+        </section>
+ <!-------------------------------------- Our Story end ------------------------------------>
+  <!-------------------------------------- Our Story end ------------------------------------>
+
+        <!-------------------------------------- Stats start ------------------------------------>
+          <!-------------------------------------- Stats start ------------------------------------>
+        <section class="stats">
+            <div class="stat-box">
+                <h2 class="counter" data-target="150">0</h2>
+                <p>Mountain Trails Covered</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="12000">0</h2>
+                <p>Happy Trekkers</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="99">0</h2>
+                <p>Safety Success Rate (%)</p>
+            </div>
+            <div class="stat-box">
+                <h2 class="counter" data-target="45">0</h2>
+                <p>Expert Mountain Guides</p>
+            </div>
+        </section>
+  
+        <!-------------------------------------- Stats end ------------------------------------>
+         <!-------------------------------------- Stats end ------------------------------------>
+
+
+
+  <!-------------------------------------- features-section start------------------------------------>
+   <!------------------------- 4. Why Choose Us Section ------------------------->
+<section class="features-section py-5">
+    <div class="container text-center">
+        <div class="section-header mb-5">
+            <span class="section-tag">WHY CHOOSE US</span>
+            <h2 class="fw-bold mt-2 text-light">Built For Safe & Unforgettable Expeditions</h2>
+            <div class="title-underline"></div>
+        </div>
+        
+        <div class="row g-4">
+            <!-- Feature 1 -->
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4" onclick="showFeatureDetails('guides')">
+                    <div class="feature-icon-wrapper mb-3">
+                        <span class="feature-icon">🏔️</span>
+                    </div>
+                    <!-- Live Counter Stat -->
+                    <h2 class="stat-number text-warning fw-bold mb-1" data-target="50">0</h2>
+                    <span class="text-uppercase text-muted extra-small d-block mb-3">Certified Local Guides</span>
+                    
+                    <p class="text-muted small mb-0">Experienced high-altitude mountaineers who know every trail and weather shift.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4" onclick="showFeatureDetails('safety')">
+                    <div class="feature-icon-wrapper mb-3">
+                        <span class="feature-icon">🛡️</span>
+                    </div>
+                    <!-- Live Counter Stat -->
+                    <h2 class="stat-number text-warning fw-bold mb-1" data-target="100">0</h2>
+                    <span class="text-uppercase text-muted extra-small d-block mb-3">% Safety Record</span>
+                    
+                    <p class="text-muted small mb-0">Full satellite connectivity, first-aid kits, and emergency rescue protocols.</p>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-md-4">
+                <div class="feature-card h-100 p-4" onclick="showFeatureDetails('gear')">
+                    <div class="feature-icon-wrapper mb-3">
+                        <span class="feature-icon">🎪</span>
+                    </div>
+                    <!-- Live Counter Stat -->
+                    <h2 class="stat-number text-warning fw-bold mb-1" data-target="1200">0</h2>
+                    <span class="text-uppercase text-muted extra-small d-block mb-3">+ Successful Treks</span>
+                    
+                    <p class="text-muted small mb-0">High-quality weatherproof tents, thermal sleeping gear, and fresh nutritious meals.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Feature Detail Modal (Card) -->
+<div id="featureModal" class="custom-modal-overlay">
+    <div class="custom-modal-card">
+        <button class="modal-close-btn" onclick="closeFeatureModal()">&times;</button>
+        <div class="modal-icon-container mb-3">
+            <span id="modalIcon" class="modal-icon">🏔️</span>
+        </div>
+        <h3 id="modalTitle" class="text-warning fw-bold mb-2">Feature Details</h3>
+        <p id="modalDescription" class="text-light mb-4">Detailed information will appear here.</p>
+        <button class="btn btn-warning fw-semibold px-4 rounded-pill" onclick="closeFeatureModal()">Got It!</button>
+    </div>
+</div>
+        <!-------------------------------------- Mission/Values end------------------------------------> 
+        <!-------------------------------------- Mission/Values end------------------------------------>
+
+
+
+         <!-------------------------------------- Team start ------------------------------------>
+        <!-------------------------------------- Team start ------------------------------------>
+        
+        <!-------------------------------------- Team Start ------------------------------------>
+<section class="team">
+    <div class="team-header">
+        <span>OUR EXPERTS</span>
+        <h2>Meet Our Team</h2>
+    </div>
+
+    <!-- 3D Carousel Wrapper -->
+    <div class="wrapper" tabindex="0" aria-label="3D Team Carousel">
+        <div class="inner" style="--quantity: 6;">
+            
+            <!-- Member 1 -->
+            <div class="card" style="--index: 0; --color-card: 13, 110, 253;" 
+                 data-bio="Mirha brings over 10+ years of leadership experience in travel and tourism innovation." 
+                 data-social='{"linkedin":"#", "twitter":"#", "email":"mirha@travelease.com"}'>
+                <div class="img">
+                    <img src="./images/office-employe-1png.avif" alt="Mirha Malik">
+                </div>
+                <h3>Mirha Malik</h3>
+                <p>Founder & CEO</p>
+            </div>
+
+            <!-- Member 2 -->
+            <div class="card" style="--index: 1; --color-card: 96, 165, 250;" 
+                 data-bio="Kivan has navigated over 50+ international expeditions with a focus on safety and local culture." 
+                 data-social='{"linkedin":"#", "instagram":"#", "email":"kivan@travelease.com"}'>
+                <div class="img">
+                    <img src="./images/office-employe-2png.avif" alt="Kivan Khan">
+                </div>
+                <h3>Kivan Khan</h3>
+                <p>Lead Travel Guide</p>
+            </div>
+
+            <!-- Member 3 -->
+            <div class="card" style="--index: 2; --color-card: 34, 197, 94;" 
+                 data-bio="Azlan leads digital strategy and global marketing campaigns for destination showcases." 
+                 data-social='{"twitter":"#", "linkedin":"#"}'>
+                <div class="img">
+                    <img src="./images/office-employe-3png.jpg" alt="Azlan Zaidi">
+                </div>
+                <h3>Azlan Zaidi</h3>
+                <p>Marketing Head</p>
+            </div>
+
+            <!-- Member 4 -->
+            <div class="card" style="--index: 3; --color-card: 234, 179, 8;" 
+                 data-bio="Mirha brings over 10+ years of leadership experience in travel and tourism innovation." 
+                 data-social='{"linkedin":"#", "email":"mirha@travelease.com"}'>
+                <div class="img">
+                    <img src="./images/office-employe-1png.avif" alt="Mirha Malik">
+                </div>
+                <h3>Mirha Malik</h3>
+                <p>Founder & CEO</p>
+            </div>
+
+            <!-- Member 5 -->
+            <div class="card" style="--index: 4; --color-card: 168, 85, 247;" 
+                 data-bio="Kivan has navigated over 50+ international expeditions with a focus on safety and local culture." 
+                 data-social='{"instagram":"#", "email":"kivan@travelease.com"}'>
+                <div class="img">
+                    <img src="./images/office-employe-2png.avif" alt="Kivan Khan">
+                </div>
+                <h3>Kivan Khan</h3>
+                <p>Lead Travel Guide</p>
+            </div>
+
+            <!-- Member 6 -->
+            <div class="card" style="--index: 5; --color-card: 236, 72, 153;" 
+                 data-bio="Azlan leads digital strategy and global marketing campaigns for destination showcases." 
+                 data-social='{"linkedin":"#", "twitter":"#"}'>
+                <div class="img">
+                    <img src="./images/office-employe-3png.jpg" alt="Azlan Zaidi">
+                </div>
+                <h3>Azlan Zaidi</h3>
+                <p>Marketing Head</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Advanced Glassmorphism Modal -->
+<div id="advTeamModal" class="adv-modal" aria-hidden="true" role="dialog">
+    <div class="adv-modal-overlay"></div>
+    <div class="adv-modal-card">
+        <button class="adv-modal-close" aria-label="Close modal">&times;</button>
+        <div class="adv-modal-header">
+            <div class="adv-avatar-wrapper">
+                <img id="advModalImg" src="" alt="Member Image">
+                <span id="advModalAccent" class="avatar-ring"></span>
+            </div>
+            <h3 id="advModalName">Member Name</h3>
+            <span id="advModalRole" class="adv-role-badge">Role</span>
+        </div>
+        <div class="adv-modal-body">
+            <p id="advModalBio">Bio text goes here...</p>
+            <div id="advModalSocials" class="adv-social-links">
+                <!-- Social links JS through injected honge -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-------------------------------------- Team End ------------------------------------>
+ <!-------------------------------------- Team end ------------------------------------>
+  <!-------------------------------------- Team end ------------------------------------>
+
+
+        <!-------------------------------------- CTA end ------------------------------------>
+         <!-------------------------------------- CTA end ------------------------------------>
+        <section class="cta">
+            <h2>Ready to Start Your Adventure?</h2>
+            <p>Join thousands of happy travelers and book your next journey today.</p>
+            <a href="planner.html" class="cta-btn">Plan Your Trip</a>
+        </section>
+    </main>
+ <!-------------------------------------- CTA end ------------------------------------>
+  <!-------------------------------------- CTA end ------------------------------------>
+
+
+
+
+    <!--------------------------------------- Footer Section start----------------------------------- -->
+     <!--------------------------------------Footer Section start-  ------------------------------------>
+    <footer style="background: #0b1120; color: #cbd5e1; text-align: center; padding: 30px 8%; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="margin: 0;">&copy; 2026 TravelX. All Rights Reserved.</p>
+    </footer>
+<!----------------------------- Footer Section end----------------------------------- -->
+
+<!----------------------------- Footer Section end----------------------------------- -->
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.15.0/gsap.min.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/about.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+</body>
+</html>
