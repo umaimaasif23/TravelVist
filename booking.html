@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelVista - Ultra Luxury 3D Booking Experience</title>
+    <link rel="stylesheet" href="booking.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Enhanced Glowing Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- TOP NAVIGATION HEADER (No Sidebar) -->
+    <header class="top-navbar">
+        <div class="nav-container">
+            <div class="brand-logo">
+                <i class="fa-solid fa-earth-americas logo-icon"></i>
+                <div class="logo-text">
+                    <h2>Travel<span>Vista</span></h2>
+                    <small>Luxury Global Journeys</small>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="dashboard.html" class="nav-item"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+                <a href="booking.html" class="nav-item active"><i class="fa-solid fa-book-open"></i>  Booking</a>
+                <a href="blog.html" class="nav-item"><i class="fa-solid fa-newspaper"></i> Travel Blogs</a>
+                <a href="gallery.html" class="nav-item"><i class="fa-solid fa-photo-film"></i> Gallery</a>
+            </nav>
+
+            <div class="user-badge">
+                <div class="avatar">MF</div>
+                <div class="user-details">
+                    <strong> Fatima</strong>
+                    <small>MUSLIM</small>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-wrapper">
+
+        <!-- Hero Title Banner -->
+        <section class="hero-banner">
+            <h1><i class="fa-solid fa-book-journal-whills"></i> Interactive Travel Passport Diary</h1>
+            <p>Flip through the pages of our 3D Luxury World Album to explore iconic destinations before locking your reservation.</p>
+        </section>
+
+        <!-- BOOK CONTROLS BAR -->
+        <div class="book-controls-bar">
+            <button id="prevPageBtn" class="btn-ctrl"><i class="fa-solid fa-chevron-left"></i> Previous Page</button>
+            <span id="pageIndicator" class="page-indicator">Cover Page</span>
+            <button id="nextPageBtn" class="btn-ctrl btn-gold">Next Page <i class="fa-solid fa-chevron-right"></i></button>
+            <button id="toggleBookBtn" class="btn-open-diary"><i class="fa-solid fa-book-open"></i> Reset / Open Book</button>
+        </div>
+
+        <!-- MULTI-PAGE 3D OPENING BOOK / COPY -->
+        <section class="book-wrapper">
+            <div class="book-3d" id="travelBook">
+                
+                <!-- PAPER 1 (Cover Page & Page 1) -->
+                <div class="paper" id="p1">
+                    <div class="front-page book-cover">
+                        <div class="cover-border">
+                            <i class="fa-solid fa-passport cover-badge"></i>
+                            <h2>TravelVista</h2>
+                            <h3>Official World Diary</h3>
+                            <span class="gold-subtitle">Edition 2026 - International VIP Edition</span>
+                            <div class="open-tag">
+                                <i class="fa-solid fa-hand-pointer"></i> Click 'Next Page' to Open
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> Paris, France</h3>
+                            <p>Experience the romantic charm of the Eiffel Tower, Seine River Cruises, and world-class French cuisine.</p>
+                            <span class="price-tag">Starting at $2,499</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAPER 2 (Page 2 & Page 3) -->
+                <div class="paper" id="p2">
+                    <div class="front-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> Dubai, UAE</h3>
+                            <p>Step into futuristic luxury with the Burj Khalifa, desert safaris, and 7-star resort hospitality.</p>
+                            <span class="price-tag">Starting at $1,999</span>
+                        </div>
+                    </div>
+                    <div class="back-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> Tokyo, Japan</h3>
+                            <p>Discover vibrant Neon streets, historic Shinto shrines, and high-speed Bullet Trains.</p>
+                            <span class="price-tag">Starting at $2,899</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAPER 3 (Page 4 & Page 5) -->
+                <div class="paper" id="p3">
+                    <div class="front-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> Maldives Islands</h3>
+                            <p>Relax in private overwater villas surrounded by crystal-clear turquoise ocean waters.</p>
+                            <span class="price-tag">Starting at $3,199</span>
+                        </div>
+                    </div>
+                    <div class="back-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> London, United Kingdom</h3>
+                            <p>Explore historic castles, Big Ben, Westminster Abbey, and British royal heritage.</p>
+                            <span class="price-tag">Starting at $2,299</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PAPER 4 (Page 6 & Back Cover) -->
+                <div class="paper" id="p4">
+                    <div class="front-page full-img-page" style="background-image: url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1000&q=80');">
+                        <div class="page-overlay">
+                            <h3><i class="fa-solid fa-location-dot"></i> Bali, Indonesia</h3>
+                            <p>Tropical rainforests, serene beach resorts, ancient temples, and spiritual wellness.</p>
+                            <span class="price-tag">Starting at $1,850</span>
+                        </div>
+                    </div>
+                    <div class="back-page book-cover back-cover">
+                        <div class="cover-border">
+                            <i class="fa-solid fa-plane-departure cover-badge"></i>
+                            <h2>Ready to Fly?</h2>
+                            <p>Scroll down to complete your official travel booking form and lock your seats!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DESTINATION SLIDER CAROUSEL SECTION -->
+        <section class="slider-section">
+            <h2 class="section-title"><i class="fa-solid fa-compass"></i> Popular International Flight Routes</h2>
+            <div class="carousel-container">
+                <button class="carousel-btn prev-slide" id="slidePrev"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=500&q=80" alt="Paris">
+                        <div class="slide-info">
+                            <h4>Paris, France</h4>
+                            <p>5 Days / 4 Nights Package</p>
+                            <span class="badge">$2,499</span>
+                        </div>
+                    </div>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80" alt="Dubai">
+                        <div class="slide-info">
+                            <h4>Dubai, UAE</h4>
+                            <p>4 Days Desert & City Safari</p>
+                            <span class="badge">$1,999</span>
+                        </div>
+                    </div>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" alt="Tokyo">
+                        <div class="slide-info">
+                            <h4>Tokyo, Japan</h4>
+                            <p>7 Days Tech & Culture Tour</p>
+                            <span class="badge">$2,899</span>
+                        </div>
+                    </div>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=80" alt="Maldives">
+                        <div class="slide-info">
+                            <h4>Maldives Paradise</h4>
+                            <p>6 Days Luxury Resort Stay</p>
+                            <span class="badge">$3,199</span>
+                        </div>
+                    </div>
+                    <div class="slide-card">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=500&q=80" alt="London">
+                        <div class="slide-info">
+                            <h4>London, UK</h4>
+                            <p>5 Days Royal Explorer</p>
+                            <span class="badge">$2,299</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-btn next-slide" id="slideNext"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- VIP FEATURES GRID -->
+        <section class="features-grid-section">
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved feature-icon"></i>
+                <h4>100% Safe Booking</h4>
+                <p>Protected by end-to-end encrypted passport verification & secure payment gateways.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-plane-up feature-icon"></i>
+                <h4>VIP Jet Charter</h4>
+                <p>Option to upgrade to private first-class luxury cabins with gourmet dining.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-headset feature-icon"></i>
+                <h4>24/7 Global Support</h4>
+                <p>Dedicated travel concierges available anytime during your international trip.</p>
+            </div>
+        </section>
+
+        <!-- LARGE ADVANCED BOOKING FORM SECTION -->
+        <section class="booking-form-section" id="bookingFormSection">
+            <div class="form-header">
+                <h2><i class="fa-solid fa-ticket"></i> International Flight & Hotel Reservation</h2>
+                <p>Fill out your journey details below to lock your seats and instantly generate your digital boarding pass.</p>
+            </div>
+
+            <form class="grand-booking-form" id="grandBookingForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-user"></i> Full Passenger Name</label>
+                        <input type="text" placeholder="e.g. Aam Fatima" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-envelope"></i> Email Address</label>
+                        <input type="email" placeholder="fatima@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-phone"></i> Phone Number</label>
+                        <input type="tel" placeholder="+92 300 1234567" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-passport"></i> Passport / ID Number</label>
+                        <input type="text" placeholder="PK-98765432" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-earth-asia"></i> Destination Country</label>
+                        <select required>
+                            <option value="">Select Destination</option>
+                            <option>Paris, France ($2,499)</option>
+                            <option>Dubai, UAE ($1,999)</option>
+                            <option>Tokyo, Japan ($2,899)</option>
+                            <option>Maldives Islands ($3,199)</option>
+                            <option>London, UK ($2,299)</option>
+                            <option>Bali, Indonesia ($1,850)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-users"></i> Total Passengers</label>
+                        <select required>
+                            <option>1 Adult (Single Traveler)</option>
+                            <option>2 Adults (Couple Package)</option>
+                            <option>Family Package (2 Adults + 2 Kids)</option>
+                            <option>Group Booking (5+ Members)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-calendar-day"></i> Departure Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-calendar-check"></i> Return Date</label>
+                        <input type="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-crown"></i> Travel Class</label>
+                        <select>
+                            <option>First Class VIP Suite</option>
+                            <option>Business Class Deluxe</option>
+                            <option>Premium Economy</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label><i class="fa-solid fa-tag"></i> Promo / Coupon Code</label>
+                        <input type="text" placeholder="e.g. VISTA2026">
+                    </div>
+                    <div class="form-group full-width-group">
+                        <label><i class="fa-solid fa-pen-to-square"></i> Special Instructions / Hotel Requests</label>
+                        <input type="text" placeholder="e.g. Sea-view room, Halal food preference, Airport pickup needed">
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" checked required>
+                        <span class="checkmark"></span>
+                        I agree to TravelVista International Booking Terms & Health Insurance Policy
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit-reservation">
+                    <i class="fa-solid fa-paper-plane"></i> Confirm Reservation & Generate Ticket
+                </button>
+            </form>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <footer class="grand-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Travel<span>Vista</span></h2>
+                    <p>Providing World-Class International Luxury Travel Services since 2026.</p>
+                </div>
+
+                <div class="social-box">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-btn twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>Designed & Developed with ❤️ by <strong> Fatima Muslim </strong></p>
+                <p class="sub-copy">&copy; 2026 TravelVista Agency. All Rights Reserved.</p>
+            </div>
+        </footer>
+      
+
+    </main>
+      
+
+    <script type="module" src="booking.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDd5f293MHEbpT019qT0ckN3xoMsy8kBZg",
+  authDomain: "skillnest-93fac.firebaseapp.com",
+  databaseURL: "https://skillnest-93fac-default-rtdb.firebaseio.com",
+  projectId: "skillnest-93fac",
+  storageBucket: "skillnest-93fac.firebasestorage.app",
+  messagingSenderId: "175107609952",
+  appId: "1:175107609952:web:2b0622f1800210de353a05"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+export { db };
