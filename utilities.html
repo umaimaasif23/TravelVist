@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelEase - Trekking Utilities</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/mountains.css">
+  <link rel="stylesheet" href="./css/utilities.css">
+</head>
+<body class="bg-dark text-white">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary sticky-top">
+    <div class="container">
+      <img class="logo" src="./images/travel-website-logo.png" alt="TravelX Logo">
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="mountains.html">Mountains</a>
+        <a class="nav-link active" href="utilities.html">Utilities</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="py-5 text-center">
+    <div class="container">
+      <h1 class="fw-bold text-info">Trekking Utilities & Safety Hub</h1>
+      <p class="text-secondary">Essential tools, packing checklists, and altitude guidelines.</p>
+    </div>
+  </header>
+
+  <main class="container my-4">
+    <div class="row g-4">
+      
+      <!-- Utility 1: Gear Checklist -->
+      <div class="col-lg-7">
+        <div class="p-4 rounded-4 border border-secondary bg-dark shadow-sm">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h3 class="h4 text-info m-0">🎒 Gear Checklist</h3>
+            <span id="checklistProgress" class="badge bg-primary fs-6">0% Completed</span>
+          </div>
+
+          <div class="list-group list-group-flush" id="gearList">
+            <label class="list-group-item bg-transparent text-white border-secondary">
+              <input class="form-check-input me-2 gear-item" type="checkbox"> Waterproof Trekking Boots
+            </label>
+            <label class="list-group-item bg-transparent text-white border-secondary">
+              <input class="form-check-input me-2 gear-item" type="checkbox"> Thermal Down Jacket
+            </label>
+            <label class="list-group-item bg-transparent text-white border-secondary">
+              <input class="form-check-input me-2 gear-item" type="checkbox"> Trekking Poles
+            </label>
+            <label class="list-group-item bg-transparent text-white border-secondary">
+              <input class="form-check-input me-2 gear-item" type="checkbox"> Headlamp & Spare Batteries
+            </label>
+            <label class="list-group-item bg-transparent text-white border-secondary">
+              <input class="form-check-input me-2 gear-item" type="checkbox"> First Aid Kit
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Utility 2: Altitude Estimator -->
+      <div class="col-lg-5">
+        <div class="p-4 rounded-4 border border-secondary bg-dark shadow-sm mb-4">
+          <h3 class="h4 text-info mb-3">🏔️ Altitude & Oxygen Estimator</h3>
+
+          <div class="mb-3">
+            <label for="altitudeRange" class="form-label text-light">Target Elevation: <strong id="altitudeVal" class="text-info">3000m</strong></label>
+            <input type="range" class="form-range" id="altitudeRange" min="1000" max="8000" step="500" value="3000">
+          </div>
+
+          <div class="p-3 bg-secondary bg-opacity-20 rounded-3 border border-secondary">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="small text-secondary">Oxygen Level:</span>
+              <strong id="oxygenLevel" class="text-warning">80%</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="small text-secondary">Risk Level:</span>
+              <strong id="riskLevel" class="text-success">Low Risk</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+<!----------------------------Packing & Gear Checklist Section ------------------------------------>
+<!----------------------------Packing & Gear Checklist Section ------------------------------------>
+
+<!-- Tool 1: Packing & Gear Checklist Section -->
+<section id="gearChecklistSection" class="py-4">
+  <div class="card border-secondary bg-dark text-white shadow-lg p-3 p-md-4 rounded-4">
+    
+    <!-- Header & Overall Progress Bar -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+      <div>
+        <h2 class="h3 text-info fw-bold mb-1">🎒 Trekking Gear Checklist</h2>
+        <p class="text-secondary small mb-0">Select your packed items to track your preparation progress.</p>
+      </div>
+      <div class="text-md-end">
+        <span class="fs-6 text-secondary">Packing Progress:</span>
+        <span id="overallProgressText" class="fw-bold text-info fs-5 ms-2">0%</span>
+      </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress mb-4 bg-secondary bg-opacity-20" style="height: 12px; border-radius: 10px;">
+      <div id="overallProgressBar" class="progress-bar bg-info progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <!-- Categories Grid -->
+    <div class="row g-4">
+      
+      <!-- Category 1: Clothing -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3 h-100">
+          <h3 class="h6 text-warning fw-bold mb-3">🧥 Clothing & Wear</h3>
+          <div class="d-flex flex-column gap-2">
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Thermal Layers
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Down Jacket
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Waterproof Pants
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Trekking Boots
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Safety Gear -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3 h-100">
+          <h3 class="h6 text-danger fw-bold mb-3">⛑️ Safety & Navigation</h3>
+          <div class="d-flex flex-column gap-2">
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> First Aid Kit
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Headlamp & Extra Batteries
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Multi-tool Knife
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> GPS / Offline Map
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Food & Water -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3 h-100">
+          <h3 class="h6 text-success fw-bold mb-3">💧 Food & Water</h3>
+          <div class="d-flex flex-column gap-2">
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Water Purification Tablets
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Insulated Water Flask
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> High-Energy Snack Bars
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> ORS / Electrolytes
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4: Documents -->
+      <div class="col-12 col-md-6 col-xl-3">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3 h-100">
+          <h3 class="h6 text-info fw-bold mb-3">📄 Documents & Cash</h3>
+          <div class="d-flex flex-column gap-2">
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Original CNIC / Passport
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Trekking Permits
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Emergency Physical Cash
+            </label>
+            <label class="form-check-label d-flex align-items-center gap-2">
+              <input class="form-check-input gear-item" type="checkbox"> Travel Insurance Copy
+            </label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!--------------------------------------------------------------------->
+<!-- Tool 2: Altitude & Oxygen Calculator Section -->
+<section id="altitudeCalculatorSection" class="py-4">
+  <div class="card border-secondary bg-dark text-white shadow-lg p-3 p-md-4 rounded-4">
+    
+    <div class="mb-4">
+      <h2 class="h3 text-info fw-bold mb-1">🏔️ Altitude & Oxygen Estimator</h2>
+      <p class="text-secondary small mb-0">Drag the slider to estimate atmospheric oxygen levels and health risks at various mountain elevations.</p>
+    </div>
+
+    <div class="row g-4 align-items-center">
+      
+      <!-- Range Slider Column -->
+      <div class="col-12 col-lg-7">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <label for="altitudeSlider" class="form-label fw-bold text-light mb-0">Target Elevation:</label>
+            <span id="altitudeDisplay" class="badge bg-info fs-5 px-3">3,000 m</span>
+          </div>
+
+          <input type="range" class="form-range custom-range" id="altitudeSlider" min="1000" max="8000" step="250" value="3000">
+
+          <div class="d-flex justify-content-between text-secondary extra-small">
+            <span>1,000m (Sea Levelish)</span>
+            <span>4,500m (High Altitude)</span>
+            <span>8,000m (Death Zone)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Results & Risk Indicator Column -->
+      <div class="col-12 col-lg-5">
+        <div class="p-3 bg-secondary bg-opacity-10 border border-secondary rounded-3">
+          
+          <!-- Oxygen Level Bar -->
+          <div class="mb-3">
+            <div class="d-flex justify-content-between mb-1">
+              <span class="small text-secondary">Effective Oxygen Level:</span>
+              <strong id="oxygenPercentage" class="text-warning">78%</strong>
+            </div>
+            <div class="progress bg-dark" style="height: 10px; border-radius: 5px;">
+              <div id="oxygenProgressBar" class="progress-bar bg-warning" role="progressbar" style="width: 78%;"></div>
+            </div>
+          </div>
+
+          <!-- Risk Level Badge -->
+          <div class="d-flex justify-content-between align-items-center mb-3 p-2 bg-dark rounded-2 border border-secondary">
+            <span class="small text-secondary">Sickness Risk:</span>
+            <span id="riskBadge" class="badge bg-success fs-6">Low Risk</span>
+          </div>
+
+          <!-- Dynamic Medical Tip -->
+          <div class="p-2 bg-dark rounded-2 border border-secondary">
+            <p id="altitudeTip" class="small text-light mb-0">
+              💡 <strong>Advice:</strong> Ideal height for gradual acclimatization. Stay hydrated!
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!---------------------------------------------------------->
+<!-- Tool 3: Weather & Temperature Matrix Section -->
+<section id="weatherMatrixSection" class="py-4">
+  <div class="card border-secondary bg-dark text-white shadow-lg p-3 p-md-4 rounded-4">
+    
+    <!-- Section Header & Filter Buttons -->
+    <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+      <div>
+        <h2 class="h3 text-info fw-bold mb-1">🌤️ Weather & Altitude Matrix</h2>
+        <p class="text-secondary small mb-0">Seasonal temperature ranges and recommended trek windows for major northern spots.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="btn-group btn-group-sm" role="group" aria-label="Weather location filters">
+        <button type="button" class="btn btn-outline-info active filter-weather-btn" data-filter="all">All Spots</button>
+        <button type="button" class="btn btn-outline-info filter-weather-btn" data-filter="peaks">8000m Peaks</button>
+        <button type="button" class="btn btn-outline-info filter-weather-btn" data-filter="treks">Popular Treks</button>
+      </div>
+    </div>
+
+    <!-- Responsive Weather Table -->
+    <div class="table-responsive">
+      <table class="table table-dark table-hover align-middle border-secondary mb-0">
+        <thead class="table-active text-info border-bottom border-secondary">
+          <tr>
+            <th scope="col">Destination</th>
+            <th scope="col">Altitude</th>
+            <th scope="col">Summer (Jun-Aug)</th>
+            <th scope="col">Winter (Dec-Feb)</th>
+            <th scope="col">Best Season</th>
+            <th scope="col" class="text-end">Status</th>
+          </tr>
+        </thead>
+        <tbody id="weatherMatrixBody">
+          <!-- Populated by JavaScript -->
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+<!------------------------------------------------------------------->
+
+<!-- Tool 4: Emergency & Safety Contacts Section -->
+<section id="emergencySafetySection" class="py-4">
+  <div class="card border-danger border-opacity-50 bg-dark text-white shadow-lg p-3 p-md-4 rounded-4">
+    
+    <!-- Section Header -->
+    <div class="mb-4">
+      <div class="d-flex align-items-center gap-2 mb-1">
+        <span class="badge bg-danger">CRITICAL INFO</span>
+        <h2 class="h3 text-danger fw-bold mb-0">🚨 Emergency & Safety Contacts</h2>
+      </div>
+      <p class="text-secondary small mb-0">Quick access to rescue hotlines, mountain safety protocols, and medical advice.</p>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="row g-3 g-md-4">
+      
+      <!-- Card 1: Emergency Helplines -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="p-3 p-md-4 bg-danger bg-opacity-10 border border-danger border-opacity-25 rounded-3 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="fs-4">📞</span>
+              <h3 class="h6 text-danger fw-bold mb-0">Rescue Hotlines</h3>
+            </div>
+            <ul class="list-unstyled text-light small d-flex flex-column gap-2 mb-3">
+              <li class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-2">
+                <span>Askari Aviation (Helicopter):</span>
+                <a href="tel:1122" class="btn btn-outline-danger btn-sm px-2 py-0">Call 1122</a>
+              </li>
+              <li class="d-flex justify-content-between align-items-center border-bottom border-secondary border-opacity-25 pb-2">
+                <span>Mountain Rescue Base:</span>
+                <a href="tel:+9251111111" class="btn btn-outline-danger btn-sm px-2 py-0">+92-5111</a>
+              </li>
+              <li class="d-flex justify-content-between align-items-center">
+                <span>Gilgit Disaster Relief:</span>
+                <a href="tel:1122" class="btn btn-outline-danger btn-sm px-2 py-0">Call 1122</a>
+              </li>
+            </ul>
+          </div>
+          <p class="extra-small text-secondary mb-0">⚠️ Keep sat-phone or offline emergency numbers saved during treks.</p>
+        </div>
+      </div>
+
+      <!-- Card 2: Acute Mountain Sickness (AMS) Protocol -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="p-3 p-md-4 bg-warning bg-opacity-10 border border-warning border-opacity-25 rounded-3 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="fs-4">🩺</span>
+              <h3 class="h6 text-warning fw-bold mb-0">AMS & Medical First-Aid</h3>
+            </div>
+            <ul class="list-unstyled text-light small d-flex flex-column gap-2 mb-0">
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-warning">✔</span>
+                <span><strong>Golden Rule:</strong> Stop ascending if headache or nausea persists.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-warning">✔</span>
+                <span><strong>Immediate Action:</strong> Descend 500m-1000m down if symptoms worsen.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-warning">✔</span>
+                <span><strong>Hydration:</strong> Drink 4+ Liters of warm fluids with ORS daily.</span>
+              </li>
+            </ul>
+          </div>
+          <span class="badge bg-warning text-dark mt-3 align-self-start">Medical Rule: Descend Early</span>
+        </div>
+      </div>
+
+      <!-- Card 3: Extreme Weather & Survival Tips -->
+      <div class="col-12 col-lg-4">
+        <div class="p-3 p-md-4 bg-info bg-opacity-10 border border-info border-opacity-25 rounded-3 h-100 d-flex flex-column justify-content-between">
+          <div>
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="fs-4">🧭</span>
+              <h3 class="h6 text-info fw-bold mb-0">Survival & Navigation</h3>
+            </div>
+            <ul class="list-unstyled text-light small d-flex flex-column gap-2 mb-0">
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-info">▸</span>
+                <span>Never trek alone after 4:00 PM in high passes.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-info">▸</span>
+                <span>Keep battery packs warm inside sleeping bags at night.</span>
+              </li>
+              <li class="d-flex align-items-start gap-2">
+                <span class="text-info">▸</span>
+                <span>Mark offline GPS checkpoints on Maps.me / AllTrails.</span>
+              </li>
+            </ul>
+          </div>
+          <span class="badge bg-info text-dark mt-3 align-self-start">High-Altitude Rule</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <script src="./js/utilities.js"></script>
+</body>
+</html>

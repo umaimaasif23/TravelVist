@@ -1,0 +1,297 @@
+/* ==========================================
+   Utilities Page Custom Styles
+   ========================================== */
+.logo{
+    height: 120px;
+    width: 200px;
+}
+/* Main Container & Page Spacing */
+body {
+  background-color: #0d0f12;
+  color: #e2e8f0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  min-height: 100vh;
+}
+
+/* Glassmorphism Cards Styling */
+.border-secondary {
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.bg-dark {
+  background-color: #161b22 !important;
+}
+
+main .rounded-4 {
+  border-radius: 16px !important;
+  background: rgba(22, 27, 34, 0.85);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+main .rounded-4:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom Checklist Styling */
+.list-group-item {
+  transition: background-color 0.2s ease;
+  padding: 12px 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.list-group-item:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.form-check-input {
+  width: 1.2em;
+  height: 1.2em;
+  cursor: pointer;
+  background-color: #21262d;
+  border-color: #484f58;
+}
+
+.form-check-input:checked {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+/* Range Slider Styling */
+.form-range::-webkit-slider-thumb {
+  background: #0dcaf0;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
+}
+
+.form-range::-moz-range-thumb {
+  background: #0dcaf0;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
+}
+
+.form-range::-webkit-slider-runnable-track {
+  background-color: #21262d;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Badge Smooth Transition */
+#checklistProgress {
+  transition: all 0.3s ease;
+  font-weight: 600;
+  padding: 6px 12px;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Tablets & Mobile Devices (Below 992px) */
+@media (max-width: 991.98px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main .rounded-4 {
+    padding: 1.25rem !important;
+  }
+}
+
+/* Mobile Screens (Below 576px) */
+@media (max-width: 575.98px) {
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  .list-group-item {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+  }
+
+  #checklistProgress {
+    font-size: 0.75rem !important;
+  }
+}
+/********************************************************/
+/* Custom styling for checklist items */
+.form-check-label {
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.form-check-input:checked {
+  background-color: #0dcaf0;
+  border-color: #0dcaf0;
+}
+
+.text-decoration-line-through {
+  opacity: 0.6;
+}
+
+/* Responsive spacing for smaller screens */
+@media (max-width: 575.98px) {
+  .form-check-label {
+    font-size: 0.875rem;
+  }
+}
+
+/* ==========================================
+   Tool 2: Altitude Calculator Responsive Styles
+   ========================================== */
+
+/* Range Slider Base Styling */
+.custom-range {
+  height: 8px;
+  border-radius: 5px;
+  background-color: #21262d;
+  cursor: pointer;
+}
+
+.custom-range::-webkit-slider-thumb {
+  background: #0dcaf0;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.6);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #0d0f12;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #31d2f2;
+}
+
+.custom-range::-moz-range-thumb {
+  background: #0dcaf0;
+  box-shadow: 0 0 10px rgba(13, 202, 240, 0.6);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #0d0f12;
+  transition: transform 0.15s ease;
+}
+
+/* Extra Small Text Utilities */
+.extra-small {
+  font-size: 0.75rem;
+}
+
+/* Smooth Progress Bar Transitions */
+#oxygenProgressBar {
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+/* ==========================================
+   Responsive Breakpoints
+   ========================================== */
+
+/* Tablets & Below (Max 991.98px) */
+@media (max-width: 991.98px) {
+  #altitudeCalculatorSection .row > div {
+    margin-bottom: 0.5rem;
+  }
+
+  #altitudeDisplay {
+    font-size: 1rem !important;
+    padding: 0.35rem 0.75rem !important;
+  }
+}
+
+/* Mobile Devices (Max 575.98px) */
+@media (max-width: 575.98px) {
+  #altitudeCalculatorSection {
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+
+  /* Slider tick labels adjustment */
+  .extra-small {
+    font-size: 0.68rem;
+  }
+
+  /* Compact spacing for small screens */
+  #altitudeTip {
+    font-size: 0.8rem !important;
+  }
+
+  #riskBadge {
+    font-size: 0.8rem !important;
+  }
+
+  /* Better thumb touch-target on mobile */
+  .custom-range::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ==========================================
+   Tool 3: Weather Matrix Responsive Styles
+   ========================================== */
+
+#weatherMatrixSection .table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+#weatherMatrixSection .table th {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px;
+}
+
+#weatherMatrixSection .table td {
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+/* Mobile Table horizontal scrolling & font optimization */
+@media (max-width: 767.98px) {
+  #weatherMatrixSection .table th,
+  #weatherMatrixSection .table td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    white-space: nowrap; /* Table scroll karegi bajaye cramped hone ke */
+  }
+
+  .filter-weather-btn {
+    font-size: 0.75rem !important;
+    padding: 4px 8px !important;
+  }
+}
+
+/* ==========================================
+   Tool 4: Emergency Contacts Responsive Styles
+   ========================================== */
+
+#emergencySafetySection .btn-outline-danger {
+  font-size: 0.75rem;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out;
+}
+
+#emergencySafetySection .btn-outline-danger:hover {
+  box-shadow: 0 0 10px rgba(220, 53, 69, 0.5);
+}
+
+@media (max-width: 575.98px) {
+  #emergencySafetySection .card {
+    padding: 1rem !important;
+  }
+
+  #emergencySafetySection h2 {
+    font-size: 1.25rem !important;
+  }
+
+  #emergencySafetySection .list-unstyled li {
+    font-size: 0.825rem !important;
+  }
+}
