@@ -1,0 +1,2904 @@
+/*==========================
+      NAVBAR
+==========================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#fff;
+    overflow-x:hidden;
+}
+
+
+/*=====================================
+    GLOBAL RESPONSIVE SETTINGS
+=====================================*/
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+
+img,
+video,
+iframe{
+    max-width:100%;
+    height:auto;
+    display:block;
+}
+
+section{
+    width:100%;
+    overflow:hidden;
+}
+
+.tv-container,
+.tv-hero-container{
+    width:min(92%,1320px);
+    margin-inline:auto;
+}
+
+input,
+select,
+button,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+.tv-header{
+
+position:fixed;
+
+    height:85px;
+top:0;
+left:0;
+height: 85px;
+width:100%;
+
+z-index:1000;
+
+background:rgba(15,23,42,.75);
+
+backdrop-filter:blur(18px);
+
+transition:.4s;
+
+}
+
+.tv-header.scrolled{
+
+background:#0f172a;
+
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+}
+
+.tv-container{
+
+width:min(92%,1400px);
+
+ 
+margin-inline:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+height:85px;
+
+}
+
+.tv-logo{
+
+font-size:30px;
+
+font-weight:700;
+
+text-decoration:none;
+
+color:#fff;
+
+}
+
+.tv-logo span{
+
+color:#00b894;
+
+}
+
+.tv-plane{
+
+margin-right:6px;
+
+display:inline-block;
+
+animation:fly 3s infinite;
+
+}
+
+@keyframes fly{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-6px);
+
+}
+
+}
+
+.tv-nav-menu{
+
+display:flex;
+
+gap:28px;
+
+list-style:none;
+
+}
+
+.tv-nav-menu li a{
+
+text-decoration:none;
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:500;
+
+position:relative;
+
+transition:.35s;
+
+}
+
+.tv-nav-menu li a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:#00b894;
+
+transition:.35s;
+
+}
+
+.tv-nav-menu li a:hover,
+.tv-nav-menu li a.active{
+
+color:#00b894;
+
+}
+
+.tv-nav-menu li a:hover::after,
+.tv-nav-menu li a.active::after{
+
+width:100%;
+
+}
+
+.tv-book-btn{
+
+padding:12px 26px;
+
+background:#00b894;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:40px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.tv-book-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 25px rgba(0,184,148,.35);
+
+}
+
+.tv-menu-btn{
+
+display:none;
+
+cursor:pointer;
+
+}
+
+.tv-menu-btn span{
+
+display:block;
+
+width:28px;
+
+height:3px;
+
+background:#fff;
+
+margin:5px 0;
+
+border-radius:10px;
+
+transition:.3s;
+
+}
+
+/*==================
+Responsive
+===================*/
+
+@media(max-width:1100px){
+.tv-nav-menu{
+
+    position:fixed;
+
+    top:85px;
+
+    left:-100%;
+
+    width:280px;
+
+    height:calc(100vh - 85px);
+
+    background:#0f172a;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:flex-start;
+
+    padding:40px 30px;
+
+    gap:25px;
+
+    transition:.4s ease;
+
+    box-shadow:10px 0 30px rgba(0,0,0,.25);
+
+}
+
+.tv-nav-menu.active{
+
+    left:0;
+
+}
+
+.tv-nav-menu li{
+
+    width:100%;
+
+}
+
+.tv-nav-menu a{
+
+    display:block;
+
+    width:100%;
+
+    font-size:17px;
+
+    padding:10px 0;
+
+}
+}
+@media(max-width:768px){
+
+.tv-logo{
+
+font-size:24px;
+
+}
+
+.tv-container{
+
+height:75px;
+
+}
+
+.tv-nav-menu{
+
+top:75px;
+
+height:calc(100vh - 75px);
+
+}
+
+}
+
+@media(max-width:480px){
+
+.tv-logo{
+
+font-size:22px;
+
+}
+
+}
+/*=====================================================
+        TravelVist Premium Hero Section
+======================================================*/
+/*=========================================
+        TravelVist Premium Hero
+==========================================*/
+
+.tv-hero{
+    position: relative;
+    width: 100%;
+      min-height:100vh;
+    padding-top: 85px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Video */
+
+.tv-hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+}
+
+/* Dark Overlay */
+
+.tv-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to right,
+        rgba(10,20,30,.75),
+        rgba(10,20,30,.45)
+    );
+    z-index:2;
+}
+
+/* Main Container */
+
+.tv-hero-container{
+    width:min(92%,1300px);
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    align-items:center;
+    gap:60px;
+    position:relative;
+       padding:60px 0;
+    z-index:5;
+}
+
+/* Left Side */
+
+.tv-left{
+    color:#fff;
+    animation:heroFade 1.2s ease;
+}
+
+.tv-badge{
+    display:inline-block;
+    padding:10px 22px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(12px);
+    border-radius:50px;
+    margin-bottom:22px;
+    color:#fff;
+    font-weight:600;
+    border:1px solid rgba(255,255,255,.2);
+}
+
+.tv-left h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.15;
+    margin-bottom:20px;
+    font-weight:800;
+}
+
+.tv-left p{
+    font-size:18px;
+    color:#e2e8f0;
+    line-height:1.8;
+    margin-bottom:35px;
+    max-width:600px;
+}
+
+/* Buttons */
+
+.tv-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.tv-btn1,
+.tv-btn2{
+    text-decoration:none;
+    padding:15px 34px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.tv-btn1{
+    background:#00b894;
+    color:#fff;
+}
+
+.tv-btn1:hover{
+    background:#019875;
+    transform:translateY(-4px);
+}
+
+.tv-btn2{
+    border:2px solid #fff;
+    color:#fff;
+}
+
+.tv-btn2:hover{
+    background:#fff;
+    color:#00b894;
+}
+/*=========================================
+      Premium Search Card
+==========================================*/
+
+.tv-search-card{
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:30px;
+
+    padding:35px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    animation:heroFade 1.3s ease;
+
+}
+
+.tv-search-card h2{
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+    text-align:center;
+
+}
+
+.tv-input-box{
+
+    margin-bottom:18px;
+
+}
+
+.tv-input-box label{
+
+    display:block;
+
+    color:#fff;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+.tv-input-box input,
+.tv-input-box select{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding:0 18px;
+
+    font-size:15px;
+
+    background:rgba(255,255,255,.92);
+
+}
+
+.tv-search-card button{
+
+    width:100%;
+
+    height:56px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:#00b894;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    margin-top:10px;
+
+}
+
+.tv-search-card button:hover{
+
+    background:#019875;
+
+    transform:translateY(-3px);
+
+}
+
+/*=========================================
+        Hero Stats
+==========================================*/
+
+.tv-hero-stats{
+
+    display:flex;
+
+    gap:35px;
+
+    margin-top:45px;
+
+    flex-wrap:wrap;
+
+}
+
+.tv-stat h3{
+
+    color:#00b894;
+
+    font-size:34px;
+
+    margin-bottom:5px;
+
+}
+
+.tv-stat span{
+
+    color:#fff;
+
+    font-size:15px;
+
+}
+
+/*=========================================
+      Floating Shapes
+==========================================*/
+
+.tv-shape{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(2px);
+
+    animation:floatShape 8s ease-in-out infinite;
+
+    z-index:2;
+
+}
+
+.shape1{
+
+    width:140px;
+
+    height:140px;
+
+    background:rgba(0,184,148,.18);
+
+    top:14%;
+
+    right:8%;
+
+}
+
+.shape2{
+
+    width:80px;
+
+    height:80px;
+
+    background:rgba(255,255,255,.12);
+
+    bottom:18%;
+
+    left:6%;
+
+    animation-delay:2s;
+
+}
+
+/*=========================================
+      Scroll Indicator
+==========================================*/
+
+v-scroll{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:5;
+
+}
+
+.tv-scroll span{
+
+    display:block;
+
+    width:30px;
+
+    height:50px;
+
+    border:2px solid #fff;
+
+    border-radius:30px;
+
+    position:relative;
+
+}
+
+.tv-scroll span::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    top:8px;
+
+    transform:translateX(-50%);
+
+    width:6px;
+
+    height:10px;
+
+    border-radius:50px;
+
+    background:#00b894;
+
+    animation:scrollMove 2s infinite;
+
+}
+
+/*=========================================
+        Animations
+==========================================*/
+
+@keyframes heroFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes floatShape{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-25px);
+
+    }
+
+}
+
+@keyframes scrollMove{
+
+    0%{
+
+        opacity:1;
+
+        transform:translate(-50%,0);
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:translate(-50%,20px);
+
+    }
+
+}
+
+/*=========================================
+        Responsive
+==========================================*/
+
+@media(max-width:992px){
+
+    .tv-hero-container{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        padding:120px 0 80px;
+
+    }
+
+    .tv-left p{
+
+        margin:auto auto 35px;
+
+    }
+
+    .tv-buttons{
+
+        justify-content:center;
+
+    }
+
+    .tv-hero-stats{
+
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .tv-header{
+        height:75px;
+    }
+
+    .tv-hero{
+        margin-top:75px;
+        min-height:calc(100vh - 75px);
+    }
+
+    .tv-hero-container{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:40px 0;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .tv-left h1{
+
+        font-size:34px;
+
+    }
+
+    .tv-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .tv-btn1,
+    .tv-btn2{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+/* ///////////////////////////////////hero end */
+
+/* ////////////////////////////////////sec section start */
+/*====================================================
+        TravelVist Trusted Partners Section
+====================================================*/
+/*==================================================
+        TravelVist Partners Responsive
+==================================================*/
+
+.tv-partners{
+    position:relative;
+    padding:90px 0;
+    background:linear-gradient(180deg,#f8fbfd 0%,#eef8f6 100%);
+    overflow:hidden;
+}
+
+.tv-partners::before{
+    content:"";
+    position:absolute;
+    width:320px;
+    height:320px;
+    background:rgba(0,184,148,.08);
+    border-radius:50%;
+    top:-150px;
+    left:-150px;
+}
+
+.tv-partners::after{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    background:rgba(0,184,148,.05);
+    border-radius:50%;
+    bottom:-120px;
+    right:-120px;
+}
+
+/*================ Heading ================*/
+
+.tv-section-title{
+    width:min(92%,800px);
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.tv-section-title span{
+    display:inline-block;
+    padding:10px 22px;
+    background:#e8fbf7;
+    color:#00b894;
+    border-radius:40px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.tv-section-title h2{
+    font-size:clamp(30px,5vw,52px);
+    color:#0f172a;
+    margin-bottom:18px;
+    line-height:1.2;
+}
+
+.tv-section-title p{
+    color:#64748b;
+    line-height:1.8;
+    font-size:16px;
+}
+
+/*================ Logo Slider ================*/
+
+.tv-logo-slider{
+    width:100%;
+    overflow:hidden;
+    margin:60px 0 80px;
+}
+
+.tv-logo-track{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    width:max-content;
+    animation:tvLogoMove 28s linear infinite;
+}
+
+.tv-logo-slider:hover .tv-logo-track{
+    animation-play-state:paused;
+}
+
+@keyframes tvLogoMove{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
+
+.tv-logo-item{
+    width:170px;
+    height:100px;
+    background:#fff;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+    box-shadow:0 12px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.tv-logo-item:hover{
+    transform:translateY(-8px);
+}
+
+.tv-logo-item img{
+    width:100px;
+    max-width:80%;
+    object-fit:contain;
+    transition:.35s;
+}
+
+.tv-logo-item:hover img{
+    transform:scale(1.08);
+}
+
+/*================ Stats ================*/
+
+.tv-stats{
+    width:min(92%,1300px);
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.tv-stat-card{
+    background:#fff;
+    padding:35px 20px;
+    border-radius:22px;
+    text-align:center;
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.tv-stat-card:hover{
+    transform:translateY(-8px);
+}
+
+.tv-stat-card h3{
+    font-size:44px;
+    color:#00b894;
+    margin-bottom:10px;
+}
+
+.tv-stat-card p{
+    color:#64748b;
+    font-size:16px;
+}
+
+/*================ 1200px ================*/
+
+@media(max-width:1200px){
+
+.tv-logo-item{
+width:160px;
+height:95px;
+}
+
+.tv-stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+/*================ 992px ================*/
+
+@media(max-width:992px){
+
+.tv-partners{
+padding:80px 0;
+}
+
+.tv-section-title{
+margin-bottom:50px;
+}
+
+.tv-logo-item{
+width:150px;
+height:90px;
+}
+
+}
+
+/*================ 768px ================*/
+
+@media(max-width:768px){
+
+.tv-partners{
+padding:70px 0;
+}
+
+.tv-section-title h2{
+font-size:34px;
+}
+
+.tv-section-title p{
+font-size:15px;
+padding:0 15px;
+}
+
+.tv-logo-track{
+gap:18px;
+}
+
+.tv-logo-item{
+width:130px;
+height:80px;
+}
+
+.tv-logo-item img{
+width:75px;
+}
+
+.tv-stats{
+grid-template-columns:1fr;
+gap:18px;
+width:94%;
+}
+
+.tv-stat-card{
+padding:28px 18px;
+}
+
+.tv-stat-card h3{
+font-size:36px;
+}
+
+}
+
+/*================ 480px ================*/
+
+@media(max-width:480px){
+
+.tv-partners{
+padding:60px 0;
+}
+
+.tv-section-title{
+margin-bottom:35px;
+}
+
+.tv-section-title h2{
+font-size:28px;
+}
+
+.tv-section-title p{
+font-size:14px;
+}
+
+.tv-logo-item{
+width:110px;
+height:70px;
+}
+
+.tv-logo-item img{
+width:65px;
+}
+
+.tv-stat-card h3{
+font-size:30px;
+}
+
+.tv-stat-card p{
+font-size:14px;
+}
+
+}
+/* /////////////////////////////////////sec  second end */
+
+/* //////////////////////////////////////third start */
+/*==================================================
+        TravelVist Featured Destinations
+==================================================*/
+/*=================================================
+        TravelVist Featured Destinations
+==================================================*/
+
+.tv-featured{
+
+    padding:100px 0;
+
+    background:#f8fbfc;
+
+}
+
+.tv-featured-header{
+
+    width:min(90%,800px);
+
+    margin:0 auto 60px;
+
+    text-align:center;
+
+}
+
+.tv-subtitle{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#00b894;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.tv-featured-header h2{
+
+    font-size:clamp(32px,5vw,50px);
+
+    color:#0f172a;
+
+    margin-bottom:18px;
+
+    line-height:1.2;
+
+}
+
+.tv-featured-header p{
+
+    color:#64748b;
+
+    font-size:17px;
+
+    line-height:1.8;
+
+}
+
+.tv-featured-grid{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.tv-place-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    height:100%;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.tv-place-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.15);
+
+}
+
+.tv-place-img{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.tv-place-img img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.tv-place-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.tv-place-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:flex-end;
+
+    padding:20px;
+
+    opacity:0;
+
+    transition:.35s;
+
+}
+
+.tv-place-card:hover .tv-place-overlay{
+
+    opacity:1;
+
+}
+
+.tv-price{
+
+    background:#00b894;
+
+    color:#fff;
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+.tv-explore-btn{
+
+    background:#fff;
+
+    color:#00b894;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+}
+
+.tv-heart{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#ff3b5c;
+
+    font-size:18px;
+
+}
+
+.tv-place-content{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.tv-place-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:15px;
+
+    color:#64748b;
+
+    font-size:14px;
+
+}
+
+.tv-place-content h3{
+
+    font-size:25px;
+
+    color:#0f172a;
+
+    margin-bottom:12px;
+
+}
+
+.tv-place-content p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    flex:1;
+
+}
+
+/*======================
+Responsive
+=======================*/
+
+@media(max-width:1200px){
+
+.tv-featured-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tv-featured{
+
+padding:70px 0;
+
+}
+
+.tv-featured-grid{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+width:94%;
+
+}
+
+.tv-place-img img{
+
+height:240px;
+
+}
+
+.tv-place-content{
+
+padding:22px;
+
+}
+
+.tv-featured-header{
+
+margin-bottom:40px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.tv-featured{
+
+padding:50px 0;
+
+}
+
+.tv-place-img img{
+
+height:220px;
+
+}
+
+.tv-place-content h3{
+
+font-size:22px;
+
+}
+
+.tv-featured-header p{
+
+font-size:15px;
+
+}
+
+.tv-price,
+.tv-explore-btn{
+
+font-size:14px;
+
+padding:8px 14px;
+
+}
+
+}
+/* /////////////////////////////////////third end */
+/* //////////////////////////////////////fourth start */
+/*==================================================
+        TravelVist Trending Tour Packages
+==================================================*/
+
+.tv-packages{
+    padding:100px 0;
+    background:linear-gradient(180deg,#ffffff,#f4fbf9);
+    position:relative;
+    overflow:hidden;
+}
+
+.tv-packages-heading{
+    width:min(90%,800px);
+    margin:auto;
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.tv-packages-heading span{
+    display:inline-block;
+    padding:10px 22px;
+    background:#e8fbf7;
+    color:#00b894;
+    border-radius:50px;
+    font-size:15px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.tv-packages-heading h2{
+    font-size:clamp(36px,5vw,54px);
+    color:#0f172a;
+    margin-bottom:18px;
+}
+
+.tv-packages-heading p{
+    color:#64748b;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/*=========================
+        Grid
+=========================*/
+
+.tv-package-grid{
+    width:min(92%,1350px);
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+/*=========================
+        Package Card
+=========================*/
+
+.tv-package-card{
+    background:#fff;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.4s;
+    position:relative;
+}
+
+.tv-package-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 25px 50px rgba(0,184,148,.18);
+}
+
+/*=========================
+        Package Image
+=========================*/
+
+.tv-package-image{
+    position:relative;
+    height:260px;
+    overflow:hidden;
+}
+
+.tv-package-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.tv-package-card:hover .tv-package-image img{
+    transform:scale(1.12);
+}
+
+/*=========================
+        Sale Ribbon
+=========================*/
+
+.tv-sale-tag{
+    position:absolute;
+    top:18px;
+    left:18px;
+    background:#00b894;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    box-shadow:0 10px 25px rgba(0,184,148,.35);
+}
+
+/*==================================================
+      TravelVist Packages Part 2
+==================================================*/
+
+/*=========================
+      Package Content
+=========================*/
+
+.tv-package-content{
+    padding:25px;
+}
+
+.tv-rating{
+    display:inline-block;
+    background:#fff8e6;
+    color:#f59e0b;
+    padding:8px 16px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.tv-package-content h3{
+    font-size:28px;
+    color:#0f172a;
+    margin-bottom:10px;
+    transition:.3s;
+}
+
+.tv-package-card:hover h3{
+    color:#00b894;
+}
+
+.tv-location{
+    color:#64748b;
+    font-size:16px;
+    margin-bottom:20px;
+}
+
+/*=========================
+      Tour Information
+=========================*/
+
+.tv-info{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:22px;
+    padding:15px 0;
+    border-top:1px solid #edf2f7;
+    border-bottom:1px solid #edf2f7;
+}
+
+.tv-info span{
+    font-size:15px;
+    color:#475569;
+    font-weight:500;
+}
+
+/*=========================
+      Price Box
+=========================*/
+
+.tv-price-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.tv-price-box h4{
+    font-size:30px;
+    color:#00b894;
+    font-weight:700;
+}
+
+.tv-price-box del{
+    color:#94a3b8;
+    font-size:18px;
+}
+
+/*=========================
+      Book Button
+=========================*/
+
+.tv-book-package{
+    display:block;
+    width:100%;
+    text-align:center;
+    padding:15px;
+    text-decoration:none;
+    background:#00b894;
+    color:#fff;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+}
+
+.tv-book-package:hover{
+    background:#0f172a;
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(15,23,42,.25);
+}
+
+/*=========================
+      Border Glow
+=========================*/
+
+.tv-package-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border:2px solid transparent;
+    border-radius:24px;
+    transition:.35s;
+    pointer-events:none;
+}
+
+.tv-package-card:hover::before{
+    border-color:#00b894;
+}
+
+/*=========================
+      Card Animation
+=========================*/
+
+.tv-package-card{
+    animation:tvPackageUp .8s ease;
+}
+
+@keyframes tvPackageUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/*=========================
+      Responsive
+=========================*/
+
+@media(max-width:1100px){
+
+    .tv-package-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .tv-packages{
+        padding:80px 0;
+    }
+
+    .tv-package-grid{
+        grid-template-columns:1fr;
+        width:90%;
+        gap:25px;
+    }
+
+    .tv-packages-heading h2{
+        font-size:34px;
+    }
+
+    .tv-package-image{
+        height:230px;
+    }
+
+    .tv-package-content{
+        padding:22px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .tv-packages{
+        padding:70px 0;
+    }
+
+    .tv-package-image{
+        height:210px;
+    }
+
+    .tv-package-content h3{
+        font-size:23px;
+    }
+
+    .tv-price-box h4{
+        font-size:26px;
+    }
+
+    .tv-info{
+        flex-direction:column;
+        gap:12px;
+        align-items:flex-start;
+    }
+
+    .tv-book-package{
+        padding:14px;
+        font-size:15px;
+    }
+
+} 
+/* ////////////////////////fourth end */
+
+/* ////////////////////////video banner start */
+/*==================================================
+            TravelVist Video Banner
+==================================================*/
+/*==========================================
+        TravelVist Video Banner
+===========================================*/
+
+.tv-video-banner{
+    position:relative;
+    width:100%;
+    height:650px;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.tv-bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:1;
+}
+
+.tv-video-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    z-index:2;
+}
+
+.tv-video-content{
+    position:relative;
+    z-index:3;
+    width:90%;
+    max-width:900px;
+    color:#fff;
+}
+
+.tv-video-tag{
+    display:inline-block;
+    padding:10px 24px;
+    background:rgba(255,255,255,.15);
+    backdrop-filter:blur(8px);
+    border-radius:50px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.tv-video-content h2{
+    font-size:clamp(40px,5vw,65px);
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.tv-video-content p{
+    font-size:18px;
+    line-height:1.8;
+    margin-bottom:35px;
+    color:#e2e8f0;
+}
+
+.tv-play-btn{
+    width:90px;
+    height:90px;
+    margin:auto;
+    border-radius:50%;
+    background:#00b894;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.tv-play-btn:hover{
+    background:#fff;
+    color:#00b894;
+    transform:scale(1.1);
+}
+
+@media(max-width:768px){
+
+    .tv-video-banner{
+        height:500px;
+    }
+
+    .tv-video-content h2{
+        font-size:38px;
+    }
+
+    .tv-video-content p{
+        font-size:16px;
+    }
+
+    .tv-play-btn{
+        width:75px;
+        height:75px;
+        font-size:24px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .tv-video-banner{
+        height:420px;
+    }
+
+    .tv-video-content h2{
+        font-size:30px;
+    }
+
+}
+/* ///////////////////////video banner end */
+/* ///////////////////////////faq start */
+/*==================================================
+            TravelVist Premium FAQ
+==================================================*/
+
+.tv-faq{
+    padding:100px 0;
+    background:#f8fbfd;
+    position:relative;
+    overflow:hidden;
+}
+
+.tv-faq::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:rgba(0,184,148,.08);
+    border-radius:50%;
+    top:-120px;
+    left:-120px;
+}
+
+.tv-faq::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(15,23,42,.05);
+    border-radius:50%;
+    bottom:-100px;
+    right:-80px;
+}
+
+/*=========================
+      Heading
+=========================*/
+
+.tv-faq-header{
+    width:min(90%,800px);
+    margin:auto;
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.tv-faq-header span{
+    display:inline-block;
+    padding:10px 22px;
+    background:#e8fbf7;
+    color:#00b894;
+    border-radius:40px;
+    font-weight:600;
+    margin-bottom:20px;
+}
+
+.tv-faq-header h2{
+    font-size:clamp(36px,5vw,55px);
+    color:#0f172a;
+    margin-bottom:18px;
+}
+
+.tv-faq-header p{
+    color:#64748b;
+    line-height:1.8;
+    font-size:17px;
+}
+
+/*=========================
+      FAQ Container
+=========================*/
+
+.tv-faq-container{
+    width:min(92%,950px);
+    margin:auto;
+}
+
+.tv-faq-item{
+    background:#fff;
+    border-radius:18px;
+    margin-bottom:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    border-left:5px solid transparent;
+}
+
+.tv-faq-item:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,184,148,.15);
+}
+
+.tv-faq-item.active{
+    border-left:5px solid #00b894;
+}
+
+/*=========================
+      Question
+=========================*/
+
+.tv-faq-question{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 28px;
+    cursor:pointer;
+}
+
+.tv-faq-question h3{
+    font-size:20px;
+    color:#0f172a;
+    font-weight:600;
+}
+
+.tv-faq-question span{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#00b894;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    transition:.3s;
+}
+
+.tv-faq-item.active .tv-faq-question span{
+    transform:rotate(45deg);
+}
+
+/*=========================
+      Answer
+=========================*/
+
+.tv-faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.tv-faq-answer p{
+    padding:0 28px 25px;
+    color:#64748b;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.tv-faq-item.active .tv-faq-answer{
+    max-height:220px;
+}
+
+/*=========================
+      Responsive
+=========================*/
+
+@media(max-width:768px){
+
+    .tv-faq{
+        padding:80px 0;
+    }
+
+    .tv-faq-header h2{
+        font-size:34px;
+    }
+
+    .tv-faq-question{
+        padding:18px 20px;
+    }
+
+    .tv-faq-question h3{
+        font-size:17px;
+        padding-right:10px;
+    }
+
+    .tv-faq-question span{
+        width:35px;
+        height:35px;
+        font-size:20px;
+        flex-shrink:0;
+    }
+
+    .tv-faq-answer p{
+        padding:0 20px 20px;
+        font-size:15px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .tv-faq{
+        padding:70px 0;
+    }
+
+    .tv-faq-header h2{
+        font-size:28px;
+    }
+
+    .tv-faq-header p{
+        font-size:15px;
+    }
+
+}
+/* ////////////////////////////faq end */
+/* ///////////////////////////////////footer start */
+/*==================================================
+            TravelVist Premium Footer
+==================================================*/
+
+.tv-footer{
+
+    background:#0f172a;
+
+    color:#fff;
+
+    padding-top:90px;
+
+}
+
+.tv-footer-container{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1.3fr;
+
+    gap:45px;
+
+    padding-bottom:60px;
+
+}
+
+.tv-footer-logo{
+
+    font-size:34px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+}
+
+.tv-footer-logo span{
+
+    color:#00b894;
+
+}
+
+.tv-footer-about p{
+
+    color:#cbd5e1;
+
+    margin:25px 0;
+
+    line-height:1.9;
+
+}
+
+.tv-footer-links h3,
+
+.tv-footer-contact h3{
+
+    margin-bottom:25px;
+
+    font-size:24px;
+
+}
+
+.tv-footer-links ul{
+
+    list-style:none;
+
+}
+
+.tv-footer-links li{
+
+    margin-bottom:15px;
+
+}
+
+.tv-footer-links a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.tv-footer-links a:hover{
+
+    color:#00b894;
+
+    padding-left:8px;
+
+}
+
+.tv-footer-contact p{
+
+    color:#cbd5e1;
+
+    margin-bottom:16px;
+
+}
+
+.tv-footer-contact i{
+
+    color:#00b894;
+
+    margin-right:10px;
+
+}
+/*=========================
+      Social Icons
+=========================*/
+
+.tv-footer-social{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.tv-footer-social a{
+
+    width:46px;
+
+    height:46px;
+
+    background:#1e293b;
+
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    transition:.35s;
+
+}
+
+.tv-footer-social a:hover{
+
+    background:#00b894;
+
+    transform:translateY(-6px);
+
+}
+
+/*=========================
+      Newsletter
+=========================*/
+
+.tv-newsletter{
+
+    width:min(92%,1300px);
+
+    margin:auto;
+
+    padding:35px;
+
+    background:#00b894;
+
+    border-radius:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:30px;
+
+    transform:translateY(40px);
+
+}
+
+.tv-news-content h3{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+
+}
+
+.tv-newsletter form{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.tv-newsletter input{
+
+    width:320px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:50px;
+
+    outline:none;
+
+}
+
+.tv-newsletter button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.tv-newsletter button:hover{
+
+    background:#fff;
+
+    color:#00b894;
+
+}
+
+/*=========================
+      Bottom
+=========================*/
+
+.tv-footer-bottom{
+
+    text-align:center;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:70px 20px 30px;
+
+}
+
+.tv-footer-bottom span{
+
+    color:#00b894;
+
+    font-weight:700;
+
+}
+
+/*=========================
+      Responsive
+=========================*/
+
+@media(max-width:992px){
+
+.tv-footer-container{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.tv-newsletter{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.tv-footer-container{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.tv-footer-social{
+
+justify-content:center;
+
+}
+
+.tv-newsletter input{
+
+width:100%;
+
+}
+
+.tv-newsletter form{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+.tv-newsletter button{
+
+width:100%;
+
+}
+
+}
+/* ///////////////////////////footer end */
+
+
+
+
+
+
+
+
+
+/* /////////////////////////////////////////////////////////////////////// */
+/*=====================================
+      GLOBAL RESPONSIVE SPACING
+=====================================*/
+
+:root{
+
+    --section-padding:100px;
+
+}
+
+section{
+
+    padding:var(--section-padding) 0;
+
+}
+
+@media (max-width:992px){
+
+    :root{
+
+        --section-padding:80px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    :root{
+
+        --section-padding:60px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    :root{
+
+        --section-padding:45px;
+
+    }
+
+}
+
+
+/*==================================================
+        TravelVist Responsive Layout
+===================================================*/
+
+@media (max-width:1200px){
+
+.tv-container,
+.tv-hero-container{
+
+width:95%;
+
+}
+
+.tv-hero-container{
+
+grid-template-columns:1fr 420px;
+
+gap:40px;
+
+}
+
+.tv-left h1{
+
+font-size:56px;
+
+}
+
+}
+
+/*================ Laptop =================*/
+
+@media (max-width:992px){
+
+.tv-hero{
+
+padding-top:85px;
+
+min-height:auto;
+
+}
+
+.tv-hero-container{
+
+grid-template-columns:1fr;
+
+gap:45px;
+
+text-align:center;
+
+padding:60px 0;
+
+}
+
+.tv-left{
+
+order:1;
+
+}
+
+.tv-search-card{
+
+order:2;
+
+width:100%;
+
+max-width:650px;
+
+margin:auto;
+
+}
+
+.tv-left p{
+
+max-width:650px;
+
+margin:0 auto 30px;
+
+}
+
+.tv-buttons{
+
+justify-content:center;
+
+}
+
+.tv-hero-stats{
+
+justify-content:center;
+
+}
+
+}
+
+/*================ Tablet =================*/
+
+@media (max-width:768px){
+
+.tv-container{
+
+height:75px;
+
+}
+
+.tv-header{
+
+height:75px;
+
+}
+
+.tv-hero{
+
+padding-top:75px;
+
+}
+
+.tv-left h1{
+
+font-size:42px;
+
+line-height:1.2;
+
+}
+
+.tv-left p{
+
+font-size:16px;
+
+}
+
+.tv-search-card{
+
+padding:25px;
+
+border-radius:22px;
+
+}
+
+.tv-search-card h2{
+
+font-size:26px;
+
+}
+
+.tv-input-box input,
+.tv-input-box select{
+
+height:52px;
+
+font-size:15px;
+
+}
+
+.tv-search-card button{
+
+height:54px;
+
+}
+
+}
+
+/*================ Mobile =================*/
+
+@media (max-width:576px){
+
+.tv-container{
+
+width:94%;
+
+}
+
+.tv-left h1{
+
+font-size:34px;
+
+}
+
+.tv-badge{
+
+font-size:13px;
+
+padding:8px 18px;
+
+}
+
+.tv-buttons{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.tv-btn1,
+.tv-btn2{
+
+width:100%;
+
+text-align:center;
+
+}
+
+.tv-search-card{
+
+padding:20px;
+
+}
+
+.tv-hero-stats{
+
+gap:20px;
+
+}
+
+.tv-stat{
+
+flex:1 1 40%;
+
+}
+
+}
+
+/*================ Small Mobile =================*/
+
+@media (max-width:360px){
+
+.tv-left h1{
+
+font-size:28px;
+
+}
+
+.tv-search-card{
+
+padding:16px;
+
+}
+
+.tv-search-card h2{
+
+font-size:22px;
+
+}
+
+.tv-input-box input,
+.tv-input-box select{
+
+height:48px;
+
+font-size:14px;
+
+}
+
+.tv-search-card button{
+
+height:50px;
+
+font-size:15px;
+
+}
+
+}
+
+/*=========================================
+      Premium Hamburger Animation
+=========================================*/
+
+.tv-menu-btn{
+
+    width:35px;
+    height:28px;
+    position:relative;
+
+}
+
+.tv-menu-btn span{
+
+    position:absolute;
+    left:0;
+
+    width:100%;
+    height:3px;
+
+    background:#fff;
+
+    transition:.35s;
+
+}
+
+.tv-menu-btn span:nth-child(1){
+
+    top:0;
+
+}
+
+.tv-menu-btn span:nth-child(2){
+
+    top:12px;
+
+}
+
+.tv-menu-btn span:nth-child(3){
+
+    top:24px;
+
+}
+
+.tv-menu-btn.active span:nth-child(1){
+
+    transform:rotate(45deg);
+
+    top:12px;
+
+}
+
+.tv-menu-btn.active span:nth-child(2){
+
+    opacity:0;
+
+}
+
+.tv-menu-btn.active span:nth-child(3){
+
+    transform:rotate(-45deg);
+
+    top:12px;
+
+}
+
+
+/*=========================================
+      Hero Text Animation
+=========================================*/
+
+#heroTitle,
+#heroText{
+
+transition:all .5s ease;
+
+}
+/*=========================================
+        Mouse Parallax
+=========================================*/
+
+.tv-left,
+.tv-search-card{
+
+    transition:transform .25s linear;
+
+    will-change:transform;
+
+}
