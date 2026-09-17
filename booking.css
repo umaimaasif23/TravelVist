@@ -26,7 +26,7 @@ body {
     min-height: 100vh;
 }
 
-/* HIGH-VISIBILITY HIGH-CONTRAST CUSTOM CURSOR */
+/* HIGH-VISIBILITY HIGH-CONTRAST CUSTOM CURSOR
 .custom-cursor {
     width: 14px;
     height: 14px;
@@ -37,9 +37,9 @@ body {
     position: fixed;
     pointer-events: none;
     z-index: 99999;
-}
+} */
 
-.cursor-follower {
+/* .cursor-follower {
     width: 40px;
     height: 40px;
     border: 2px solid var(--bright-cyan);
@@ -49,7 +49,7 @@ body {
     pointer-events: none;
     z-index: 99998;
     transition: transform 0.15s ease, top 0.05s ease, left 0.05s ease;
-}
+} */
 
 /* TOP NAVBAR HEADER */
 .top-navbar {
