@@ -3,217 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TravelVista - Executive Pro Dashboard</title>
-    <link rel="stylesheet" href="dashboard.css">
-    <!-- FontAwesome Icons -->
+    <title>Dashboard | QuickServe</title>
+    <!-- Font Awesome Icons & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
 
-    <!-- Custom Animated Cursor -->
+    <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     <div class="cursor-follower"></div>
 
     <div class="dashboard-wrapper">
-        <!-- Dynamic Sidebar -->
+        <!-- Sidebar Navigation -->
         <aside class="sidebar">
-            <div class="brand-logo">
-                <i class="fa-solid fa-earth-americas logo-icon"></i>
-                <div class="logo-text">
-                    <h2>Travel<span>Vista</span></h2>
-                    <small>Explore. Experience. Discover.</small>
+            <div class="sidebar-top">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-compass logo-icon"></i>
+                    <div class="logo-text">
+                        <h2><i>TRAVEL VISTA</i></h2>
+                        
+                    </div>
                 </div>
+
+                <!-- Pages Linked Here -->
+                <nav class="sidebar-nav">
+                    <a href="dashboard.html" class="nav-item active">
+                        <i class="fa-solid fa-chart-pie"></i> Dashboard
+                    </a>
+                    <a href="index.html" class="nav-item">
+                        <i class="fa-solid fa-house"></i> Home
+                    </a>
+                    <a href="about.html" class="nav-item">
+                        <i class="fa-solid fa-address-card"></i> About Us
+                    </a>
+                    <a href="destination.html" class="nav-item">
+                        <i class="fa-solid fa-location-dot"></i> Destinations
+                    </a>
+                    <a href="beaches.html" class="nav-item">
+                        <i class="fa-solid fa-umbrella-beach"></i> Beaches
+                    </a>
+                    <a href="planner.html" class="nav-item">
+                        <i class="fa-solid fa-calendar-check"></i> Travel Planner
+                    </a>
+                    <a href="team.html" class="nav-item">
+                        <i class="fa-solid fa-users"></i> Our Team
+                    </a>
+                    <a href="utilities.html" class="nav-item">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Utilities
+                    </a>
+                     <a href="booking.html" class="nav-item">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Booking
+                    </a>
+                     <a href="blog.html" class="nav-item">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Blog
+                    </a>
+                     <a href="gallery.html" class="nav-item">
+                        <i class="fa-solid fa-screwdriver-wrench"></i> Gallary
+                    </a>
+                </nav>
             </div>
 
-            <nav class="sidebar-nav">
-                <a href="dashboard.html" class="nav-item active">
-                    <i class="fa-solid fa-chart-pie"></i>
-                    <span>Executive Dashboard</span>
-                </a>
-                <a href="booking.html" class="nav-item">
-                    <i class="fa-solid fa-book-open"></i>
-                    <span> Booking Diary</span>
-                </a>
-                <a href="blog.html" class="nav-item">
-                    <i class="fa-solid fa-newspaper"></i>
-                    <span>Travel Blogs</span>
-                </a>
-                <a href="gallery.html" class="nav-item">
-                    <i class="fa-solid fa-photo-film"></i>
-                    <span>3D Image Gallery</span>
-                </a>
-            </nav>
-
-            <div class="sidebar-card">
-                <i class="fa-solid fa-plane-up promo-icon"></i>
-                <h4>Summer Sale 2026</h4>
-                <p>Get up to 30% discount on European packages!</p>
-                <button class="btn-sidebar-promo">Claim Discount</button>
-            </div>
-
-            <div class="developer-badge">
-                <i class="fa-solid fa-code"></i> Developed by <strong>FATIMA MUSLIM </strong>
+            <div class="sidebar-bottom">
+                <div class="sidebar-card">
+                    <i class="fa-solid fa-crown promo-icon"></i>
+                    <h4>Go Pro Access</h4>
+                    <p>Unlock advanced analytics and direct booking features.</p>
+                    <button class="btn-sidebar-promo">Upgrade</button>
+                </div>
+                <div class="developer-badge">
+                    Developed by <strong>FATIMA MUSLIM</strong>
+                </div>
             </div>
         </aside>
 
-        <!-- Main Content View -->
+        <!-- Main Content Area -->
         <main class="main-content">
-            
-            <!-- Header Section -->
+            <!-- Top Header -->
             <header class="top-header">
                 <div class="search-box">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search flights, luxury resorts, packages...">
+                    <input type="text" placeholder="Search destinations, pages, bookings...">
                 </div>
-
                 <div class="header-actions">
-                    <div class="action-btn"><i class="fa-solid fa-bell"></i><span class="badge-dot"></span></div>
-                    <div class="action-btn"><i class="fa-solid fa-envelope"></i><span class="badge-dot"></span></div>
+                    <div class="action-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge-dot"></span>
+                    </div>
+                    <div class="action-btn">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
                     <div class="user-profile">
-                        <div class="avatar">FM</div>
+                        <div class="avatar">AD</div>
                         <div class="user-info">
-                            <strong>fATIMA Muslim</strong>
-                        
+                            <strong>Admin </strong>
+                            <small>FATIMA</small>
                         </div>
                     </div>
                 </div>
             </header>
 
-            <!-- Hero Section with Background Picture & Slider -->
+            <!-- Hero Banner -->
             <section class="hero-banner">
                 <div class="hero-slider">
-                    <div class="slide active" style="background-image: linear-gradient(rgba(27, 54, 93, 0.75), rgba(0, 128, 128, 0.65)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');">
+                    <div class="slide" style="background: linear-gradient(rgba(27, 54, 93, 0.85), rgba(0, 128, 128, 0.85)), url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80');">
                         <div class="slide-content">
-                            <span class="tag-gold">Exclusive Destination</span>
-                            <h1>Welcome to TravelVista Command Center</h1>
-                            <p>Manage bookings, analyze revenue, and schedule international luxury tours effortlessly.</p>
+                            <span class="tag-gold">Special Offer</span>
+                            <h1>Manage Your Appointments & Tours</h1>
+                            <p>Track bookings, explore destinations, and manage your travel team in real-time.</p>
                             <div class="hero-btns">
-                                <a href="booking.html" class="btn-primary-gold"><i class="fa-solid fa-plus"></i> New Reservation</a>
-                                <button class="btn-outline-white"><i class="fa-solid fa-paper-plane"></i> View Destinations</button>
+                                <a href="planner.html" class="btn-primary-gold">Planner</a>
+                                <a href="destination.html" class="btn-outline-white">Explore</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Circular Progress Stats Rings Section -->
-            <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Performance Analytics & Target Metrics</h3>
+            <!-- Circular Stats -->
+            <h3 class="section-title"><i class="fa-solid fa-chart-line"></i> Performance Overview</h3>
             <section class="circular-stats-grid">
-                
-                <!-- Circle Progress 1 -->
                 <div class="circle-card">
                     <div class="circle-box">
-                        <svg class="progress-ring" width="120" height="120">
-                            <circle class="progress-ring-bg" stroke="#E0E5F2" stroke-width="10" fill="transparent" r="48" cx="60" cy="60"/>
-                            <circle class="progress-ring-circle" stroke="#D4AF37" stroke-width="10" stroke-dasharray="301" stroke-dashoffset="60" fill="transparent" r="48" cx="60" cy="60"/>
+                        <svg width="90" height="90">
+                            <circle class="progress-ring-circle-bg" stroke="#E0E5F2" stroke-width="8" fill="transparent" r="35" cx="45" cy="45"/>
+                            <circle class="progress-ring-circle" stroke="var(--teal-green)" stroke-width="8" stroke-dasharray="220" stroke-dashoffset="50" stroke-linecap="round" fill="transparent" r="35" cx="45" cy="45"/>
                         </svg>
-                        <span class="percentage">80%</span>
+                        <span class="percentage">75%</span>
                     </div>
                     <div class="circle-info">
-                        <h4>Monthly Target</h4>
-                        <p>$240,000 / $300,000</p>
+                        <h4>Completed</h4>
+                        <p>120 Trips Done</p>
                     </div>
                 </div>
 
-                <!-- Circle Progress 2 -->
                 <div class="circle-card">
                     <div class="circle-box">
-                        <svg class="progress-ring" width="120" height="120">
-                            <circle class="progress-ring-bg" stroke="#E0E5F2" stroke-width="10" fill="transparent" r="48" cx="60" cy="60"/>
-                            <circle class="progress-ring-circle" stroke="#008080" stroke-width="10" stroke-dasharray="301" stroke-dashoffset="90" fill="transparent" r="48" cx="60" cy="60"/>
+                        <svg width="90" height="90">
+                            <circle stroke="#E0E5F2" stroke-width="8" fill="transparent" r="35" cx="45" cy="45"/>
+                            <circle class="progress-ring-circle" stroke="var(--gold-accent)" stroke-width="8" stroke-dasharray="220" stroke-dashoffset="110" stroke-linecap="round" fill="transparent" r="35" cx="45" cy="45"/>
                         </svg>
-                        <span class="percentage">70%</span>
+                        <span class="percentage">50%</span>
                     </div>
                     <div class="circle-info">
-                        <h4>Hotel Occupancy</h4>
-                        <p>1,420 Resort Rooms</p>
+                        <h4>Pending</h4>
+                        <p>45 On Hold</p>
                     </div>
                 </div>
 
-                <!-- Circle Progress 3 -->
                 <div class="circle-card">
                     <div class="circle-box">
-                        <svg class="progress-ring" width="120" height="120">
-                            <circle class="progress-ring-bg" stroke="#E0E5F2" stroke-width="10" fill="transparent" r="48" cx="60" cy="60"/>
-                            <circle class="progress-ring-circle" stroke="#1B365D" stroke-width="10" stroke-dasharray="301" stroke-dashoffset="30" fill="transparent" r="48" cx="60" cy="60"/>
+                        <svg width="90" height="90">
+                            <circle stroke="#E0E5F2" stroke-width="8" fill="transparent" r="35" cx="45" cy="45"/>
+                            <circle class="progress-ring-circle" stroke="var(--dark-blue)" stroke-width="8" stroke-dasharray="220" stroke-dashoffset="22" stroke-linecap="round" fill="transparent" r="35" cx="45" cy="45"/>
                         </svg>
                         <span class="percentage">90%</span>
                     </div>
                     <div class="circle-info">
-                        <h4>Client Satisfaction</h4>
-                        <p>4.9 / 5.0 Star Ratings</p>
+                        <h4>Satisfaction</h4>
+                        <p>4.9/5 Positive</p>
                     </div>
                 </div>
-
-                <!-- Circle Progress 4 -->
-                <div class="circle-card">
-                    <div class="circle-box">
-                        <svg class="progress-ring" width="120" height="120">
-                            <circle class="progress-ring-bg" stroke="#E0E5F2" stroke-width="10" fill="transparent" r="48" cx="60" cy="60"/>
-                            <circle class="progress-ring-circle" stroke="#2E8B57" stroke-width="10" stroke-dasharray="301" stroke-dashoffset="110" fill="transparent" r="48" cx="60" cy="60"/>
-                        </svg>
-                        <span class="percentage">65%</span>
-                    </div>
-                    <div class="circle-info">
-                        <h4>Flight Seat Booking</h4>
-                        <p>850 Active Tickets</p>
-                    </div>
-                </div>
-
             </section>
 
-            <!-- Grid Layout for Form & Calendar -->
-            <div class="dashboard-middle-grid">
-                
-                <!-- Quick Tour Booking Form Card -->
-                <div class="dash-card form-card">
+            <!-- Middle Grid: Form & Calendar -->
+            <section class="dashboard-middle-grid">
+                <div class="dash-card">
                     <div class="card-header">
-                        <h3><i class="fa-solid fa-plane-departure"></i> Quick Flight & Package Booking</h3>
-                        <span class="gold-badge">Live System</span>
+                        <h3>Quick Booking Form</h3>
+                        <span class="gold-badge">Fast Action</span>
                     </div>
-                    <form class="quick-form" onsubmit="event.preventDefault(); alert('Booking request submitted successfully!');">
+                    <form class="quick-form">
                         <div class="form-row">
                             <div class="input-field">
-                                <label>Passenger Name</label>
-                                <input type="text" placeholder="Full Name" required>
+                                <label>Client Name</label>
+                                <input type="text" placeholder="John Doe">
                             </div>
                             <div class="input-field">
                                 <label>Destination</label>
-                                <select required>
-                                    <option value="">Choose Country</option>
-                                    <option>Paris, France</option>
-                                    <option>Dubai, UAE</option>
-                                    <option>Tokyo, Japan</option>
-                                    <option>Maldives Islands</option>
-                                    <option>Istanbul, Turkey</option>
+                                <select>
+                                    <option>Beach Resort</option>
+                                    <option>Mountain Trek</option>
+                                    <option>City Tour</option>
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-row">
                             <div class="input-field">
-                                <label>Departure Date</label>
-                                <input type="date" required>
+                                <label>Select Date</label>
+                                <input type="date">
                             </div>
                             <div class="input-field">
-                                <label>Package Tier</label>
-                                <select required>
-                                    <option>Executive VIP Gold ($2,499)</option>
-                                    <option>Premium Business ($1,899)</option>
-                                    <option>Standard Deluxe ($1,299)</option>
+                                <label>Time Slot</label>
+                                <select>
+                                    <option>10:00 AM</option>
+                                    <option>02:00 PM</option>
+                                    <option>05:00 PM</option>
                                 </select>
                             </div>
                         </div>
-
-                        <button type="submit" class="btn-submit-booking"><i class="fa-solid fa-credit-card"></i> Process Quick Reservation</button>
+                        <button type="submit" class="btn-submit-booking">Confirm Booking</button>
                     </form>
                 </div>
 
-                <!-- Interactive Travel Calendar Card -->
-                <div class="dash-card calendar-card">
+                <div class="dash-card">
                     <div class="card-header">
-                        <h3><i class="fa-solid fa-calendar-days"></i> Travel Schedule Calendar</h3>
-                        <span class="month-label">August 2026</span>
+                        <h3>Schedule Calendar</h3>
+                        <span class="month-label">October 2026</span>
                     </div>
                     <div class="calendar-grid">
                         <div class="cal-day head">Su</div>
@@ -224,147 +221,66 @@
                         <div class="cal-day head">Fr</div>
                         <div class="cal-day head">Sa</div>
 
-                        <!-- Days -->
-                        <div class="cal-day empty"></div><div class="cal-day empty"></div><div class="cal-day empty"></div>
+                        <div class="cal-day empty"></div>
+                        <div class="cal-day empty"></div>
                         <div class="cal-day">1</div>
-                        <div class="cal-day active">2</div>
-                        <div class="cal-day">3</div><div class="cal-day">4</div>
-                        <div class="cal-day booked">5</div><div class="cal-day">6</div><div class="cal-day">7</div>
-                        <div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day booked">10</div>
-                        <div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div>
-                        <div class="cal-day">14</div><div class="cal-day active-gold">15</div><div class="cal-day">16</div>
-                        <div class="cal-day">17</div><div class="cal-day">18</div><div class="cal-day booked">19</div>
-                        <div class="cal-day">20</div><div class="cal-day">21</div><div class="cal-day">22</div>
-                        <div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div>
-                        <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div>
-                        <div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div>
+                        <div class="cal-day">2</div>
+                        <div class="cal-day booked">3</div>
+                        <div class="cal-day">4</div>
+                        <div class="cal-day">5</div>
+                        <div class="cal-day active">6</div>
+                        <div class="cal-day">7</div>
+                        <div class="cal-day">8</div>
+                        <div class="cal-day booked">9</div>
+                        <div class="cal-day">10</div>
+                        <div class="cal-day">11</div>
+                        <div class="cal-day">12</div>
+                        <div class="cal-day">13</div>
+                        <div class="cal-day">14</div>
+                        <div class="cal-day active-gold">15</div>
+                        <div class="cal-day">16</div>
+                        <div class="cal-day">17</div>
+                        <div class="cal-day">18</div>
                     </div>
                     <div class="cal-legend">
-                        <span><i class="dot gold"></i> Paris Tour</span>
-                        <span><i class="dot teal"></i> Dubai Safari</span>
-                        <span><i class="dot blue"></i> Tokyo Flight</span>
+                        <span><i class="dot gold"></i> Selected</span>
+                        <span><i class="dot teal"></i> Available</span>
+                        <span><i class="dot blue"></i> Booked</span>
                     </div>
                 </div>
-
-            </div>
-
-            <!-- 3D Flip Cards Section -->
-            <h3 class="section-title"><i class="fa-solid fa-globe"></i> International Featured Packages (Hover to Flip)</h3>
-            <section class="flip-cards-grid">
-                
-                <!-- Card 1 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: linear-gradient(to top, #1B365D, transparent), url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80');">
-                            <div class="card-front-content">
-                                <span class="badge-gold">Top Selling</span>
-                                <h3>Paris & Eiffel Romance</h3>
-                                <p><i class="fa-solid fa-location-dot"></i> France, Europe</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Paris Luxury Package</h3>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> 5-Star Hotel Stay</li>
-                                <li><i class="fa-solid fa-check"></i> Seine River Dinner Cruise</li>
-                                <li><i class="fa-solid fa-check"></i> Private Helicopter Flight</li>
-                            </ul>
-                            <div class="price-tag">$2,499</div>
-                            <a href="booking.html" class="btn-card-action">Book This Package</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: linear-gradient(to top, #1B365D, transparent), url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80');">
-                            <div class="card-front-content">
-                                <span class="badge-teal">Desert Luxury</span>
-                                <h3>Dubai VIP Resort & Safari</h3>
-                                <p><i class="fa-solid fa-location-dot"></i> Dubai, UAE</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Dubai Royal Safari</h3>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Atlantis Palm Resort</li>
-                                <li><i class="fa-solid fa-check"></i> Burj Khalifa VIP Observatory</li>
-                                <li><i class="fa-solid fa-check"></i> Private Desert Dune Bashing</li>
-                            </ul>
-                            <div class="price-tag">$1,999</div>
-                            <a href="booking.html" class="btn-card-action">Book This Package</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front" style="background-image: linear-gradient(to top, #1B365D, transparent), url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&q=80');">
-                            <div class="card-front-content">
-                                <span class="badge-gold">Cultural Tour</span>
-                                <h3>Tokyo Tech & Tradition</h3>
-                                <p><i class="fa-solid fa-location-dot"></i> Tokyo, Japan</p>
-                            </div>
-                        </div>
-                        <div class="flip-card-back">
-                            <h3>Tokyo Discovery</h3>
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Bullet Train Unlimited Pass</li>
-                                <li><i class="fa-solid fa-check"></i> Mount Fuji Helicopter Tour</li>
-                                <li><i class="fa-solid fa-check"></i> Authentic Tea Ceremony</li>
-                            </ul>
-                            <div class="price-tag">$2,899</div>
-                            <a href="booking.html" class="btn-card-action">Book This Package</a>
-                        </div>
-                    </div>
-                </div>
-
             </section>
 
-            <!-- Recent Transactions Table -->
-            <div class="dash-card table-card">
+            <!-- Table -->
+            <div class="dash-card">
                 <div class="card-header">
-                    <h3><i class="fa-solid fa-list-check"></i> Recent Customer Travel Reservations</h3>
-                    <button class="btn-view-all">View All Orders</button>
+                    <h3>Recent Bookings</h3>
+                    <button class="btn-view-all">View All</button>
                 </div>
                 <div class="table-responsive">
                     <table>
                         <thead>
                             <tr>
                                 <th>Booking ID</th>
-                                <th>Customer Name</th>
+                                <th>Client</th>
                                 <th>Destination</th>
                                 <th>Date</th>
-                                <th>Amount</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>#TV-9021</td>
-                                <td>Sarah Jenkins</td>
-                                <td>Paris, France</td>
-                                <td>Aug 10, 2026</td>
-                                <td>$2,499</td>
+                                <td>#QS-1092</td>
+                                <td>Ali Khan</td>
+                                <td>Sunny Beach</td>
+                                <td>15 Oct 2026</td>
                                 <td><span class="status confirmed">Confirmed</span></td>
                             </tr>
                             <tr>
-                                <td>#TV-9022</td>
-                                <td>Mohammed Al-Mansoor</td>
-                                <td>Tokyo, Japan</td>
-                                <td>Aug 15, 2026</td>
-                                <td>$2,899</td>
+                                <td>#QS-1093</td>
+                                <td>Sara Ahmed</td>
+                                <td>Mountain Trip</td>
+                                <td>16 Oct 2026</td>
                                 <td><span class="status pending">Pending</span></td>
-                            </tr>
-                            <tr>
-                                <td>#TV-9023</td>
-                                <td>Elena Rostova</td>
-                                <td>Dubai, UAE</td>
-                                <td>Aug 19, 2026</td>
-                                <td>$1,999</td>
-                                <td><span class="status confirmed">Confirmed</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -374,14 +290,13 @@
             <!-- Footer -->
             <footer class="footer">
                 <div class="footer-content">
-                    <p>Designed & Developed with ❤️ by <strong> Fatima (Muslim)</strong></p>
-                    <p class="copyright">TravelVista International Agency &copy; 2026. All Rights Reserved.</p>
+                    <p>Powered by <strong>FATIMA MUSLIM</strong></p>
+                    <p class="copyright">&copy; 2026 All Rights Reserved.</p>
                 </div>
             </footer>
-
         </main>
     </div>
 
-    <script src="dashboard.js"></script>
+<script type="module" src="dashboard.js"></script>
 </body>
 </html>
