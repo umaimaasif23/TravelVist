@@ -2,6 +2,28 @@ import { auth, db } from "./firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 import { collection, addDoc, getDocs, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+// Booking Save karne ke liye
+async function saveBooking() {
+  let name = document.getElementById("name").value;
+  let place = document.getElementById("place").value;
+  let date = document.getElementById("date").value;
+
+  await addDoc(collection(db, "bookings"), {
+    name: name,
+    place: place,
+    date: date
+  });
+  alert("Booking save ho gayi! Firebase me check karo");
+}
+
+// Booking dikhane ke liye dashboard pe
+async function showBookings() {
+  const querySnapshot = await getDocs(collection(db, "bookings"));
+  querySnapshot.forEach((doc) => {
+    console.log(doc.data());
+  });
+}
+
 // Authentication check
 onAuthStateChanged(auth, (user) => {
     const userInfoName = document.querySelector('.user-info strong');
