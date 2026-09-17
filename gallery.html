@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelVista -  Gallery</title>
+    <link rel="stylesheet" href="./css/gallery.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <body>
+
+    <video class="body-bg-video" autoplay muted loop playsinline>
+        <source src="./videos/16625253_3840_2160_30fps.mp4" type="video/mp4">
+    </video>
+  <div class="body-bg-overlay"></div>
+    <!-- Tumhara baqi sara code -->
+
+   
+ <!-- ////////////////////////////////////////////navbar start -->
+     <header class="tv-header">
+
+    <div class="tv-container">
+
+        <!-- Logo -->
+
+        <a href="index.html" class="tv-logo">
+
+            <span class="tv-plane">✈</span>
+
+            Travel<span>Vist</span>
+
+        </a>
+
+        <!-- Navigation -->
+
+        <ul class="tv-nav-menu">
+
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="destination.html" class="active">Destinations</a></li>
+
+            <li><a href="mountains.html">Mountains</a></li>
+
+            <li><a href="beaches.html">Beaches</a></li>
+
+            <li><a href="planner.html">Planner</a></li>
+               <li>
+                <a href="utilities.html">Utilities</a>
+            </li>
+
+
+            <li><a href="blog.html">Blog</a></li>
+
+            <li><a href="gallery.html">Gallery</a></li>
+
+            <li><a href="booking.html">Booking</a></li>
+
+        </ul>
+
+        <!-- Book Button -->
+
+        <a href="booking.html" class="tv-book-btn">
+
+            Book Now
+
+        </a>
+
+        <!-- Mobile Menu Button -->
+
+        <div class="tv-menu-btn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</header>
+    <!-- /////////////////////////////////////navbar end -->
+
+
+    <!-- MAIN CONTAINER -->
+    <main class="main-wrapper">
+
+        <!-- HERO SECTION WITH CUBE ROTATOR -->
+        <section class="gallery-hero">
+            <div class="hero-text-box">
+                <span class="hero-tag"><i class="fa-solid fa-wand-magic-sparkles"></i> 3D Motion Showcase</span>
+                <h1>World Wonders Visual Experience</h1>
+                <p>Immerse yourself in interactive 3D visual motion. Experience the majestic fjords of Norway, soaring skyscrapers of Dubai, vibrant lights of New York, and iconic balloons of Turkey.</p>
+            </div>
+
+            <!-- 3D ROTATING CUBE SHOWCASE -->
+            <div class="cube-stage">
+                <div class="cube" id="rotatingCube">
+                    <div class="cube-face front" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80');">
+                        <span>Dubai Skyline</span>
+                    </div>
+                    <div class="cube-face back" style="background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80');">
+                        <span>New York City</span>
+                    </div>
+                    <div class="cube-face right" style="background-image: url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80');">
+                        <span>Turkey Balloons</span>
+                    </div>
+                    <div class="cube-face left" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80');">
+                        <span>Norway Fjords</span>
+                    </div>
+                    <div class="cube-face top" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80');">
+                        <span>Green Alps</span>
+                    </div>
+                    <div class="cube-face bottom" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80');">
+                        <span>Crystal Rivers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTION 1: FEATURED LUXURY CINEMATIC SLIDER -->
+        <section class="slider-portion">
+            <h2 class="section-title"><i class="fa-solid fa-film"></i> Cinematic Auto-Slide Highlights</h2>
+            
+            <div class="cinematic-slider">
+                <div class="slide-track" id="slideTrack">
+                    <!-- Slide 1: Norway Green & Lakes -->
+                    <div class="slide active">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Norway">
+                        <div class="slide-caption">
+                            <h3><i class="fa-solid fa-water"></i> Fjords of Norway</h3>
+                            <p>Crystal-clear waters, lush green mountains, and serene tranquil valleys.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 2: Turkey Cappadocia -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80" alt="Turkey">
+                        <div class="slide-caption">
+                            <h3><i class="fa-solid fa-plane-up"></i> Cappadocia, Turkey</h3>
+                            <p>Vibrant hot air balloons floating across the sunrise sky.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 3: New York City -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=1200&q=80" alt="New York">
+                        <div class="slide-caption">
+                            <h3><i class="fa-solid fa-city"></i> New York, USA</h3>
+                            <p>Bright city lights and iconic Manhattan skyline at night.</p>
+                        </div>
+                    </div>
+                    <!-- Slide 4: Dubai Luxury -->
+                    <div class="slide">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80" alt="Dubai">
+                        <div class="slide-caption">
+                            <h3><i class="fa-solid fa-building-columns"></i> Dubai, UAE</h3>
+                            <p>Burj Khalifa architecture meets ultra-modern luxury in the desert skyline.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button id="prevSlide" class="s-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button id="nextSlide" class="s-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTION 2: FILTERABLE CATEGORY MASONRY GRID -->
+        <section class="grid-portion">
+            <h2 class="section-title"><i class="fa-solid fa-images"></i> Interactive World Destinations</h2>
+
+            <!-- Category Filter Buttons -->
+            <div class="filter-bar">
+                <button class="f-btn active" data-filter="all">All Places</button>
+                <button class="f-btn" data-filter="mountains">Mountains & Greenery</button>
+                <button class="f-btn" data-filter="water">Water & Lakes</button>
+                <button class="f-btn" data-filter="cities">Global Cities</button>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                
+                <!-- Item 1: Mountains -->
+                <div class="g-card reveal-item" data-category="mountains">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80" alt="Green Mountain">
+                    <div class="g-overlay">
+                        <span class="badge green">Mountains</span>
+                        <h4>Swiss Alps Meadows</h4>
+                        <p>Lush green hills and majestic mountain peaks</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Cities - Dubai -->
+                <div class="g-card reveal-item" data-category="cities">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubai">
+                    <div class="g-overlay">
+                        <span class="badge gold">Dubai, UAE</span>
+                        <h4>Downtown Burj Marina</h4>
+                        <p>Futuristic architecture and dazzling city lights</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Water - Norway -->
+                <div class="g-card reveal-item" data-category="water">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Norway Water">
+                    <div class="g-overlay">
+                        <span class="badge cyan">Norway</span>
+                        <h4>Fjord Water Basin</h4>
+                        <p>Clear blue lakes framed by Nordic mountains</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Cities - Turkey -->
+                <div class="g-card reveal-item" data-category="cities">
+                    <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80" alt="Turkey">
+                    <div class="g-overlay">
+                        <span class="badge gold">Turkey</span>
+                        <h4>Cappadocia Valley</h4>
+                        <p>Historic rock formations and scenic balloon flights</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Water - Rivers -->
+                <div class="g-card reveal-item" data-category="water">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="River Valley">
+                    <div class="g-overlay">
+                        <span class="badge cyan">Rivers</span>
+                        <h4>Alpine Cascades</h4>
+                        <p>Breathtaking waterfalls and pristine streams</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Cities - New York -->
+                <div class="g-card reveal-item" data-category="cities">
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=600&q=80" alt="New York">
+                    <div class="g-overlay">
+                        <span class="badge gold">New York</span>
+                        <h4>Manhattan Skyline</h4>
+                        <p>The iconic pulse of the metropolis</p>
+                    </div>
+                </div>
+
+                <!-- Item 7: Mountains - Green Valley -->
+                <div class="g-card reveal-item" data-category="mountains">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Green Valley">
+                    <div class="g-overlay">
+                        <span class="badge green">Greenery</span>
+                        <h4>Emerald Highlands</h4>
+                        <p>Endless stretches of rich green landscapes</p>
+                    </div>
+                </div>
+
+                <!-- Item 8: Water - Maldives -->
+                <div class="g-card reveal-item" data-category="water">
+                    <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives">
+                    <div class="g-overlay">
+                        <span class="badge cyan">Ocean</span>
+                        <h4>Maldives Ocean Lagoon</h4>
+                        <p>Turquoise tropical waters and luxury coastlines</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FOOTER SECTION -->
+        <footer class="grand-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Travel<span>Vista</span></h2>
+                    <p>International Travel Stories, Guides & Luxury Experiences.</p>
+                </div>
+
+                <div class="social-box">
+                    <h4>Follow Our Journeys</h4>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-btn facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="social-btn instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://twitter.com" target="_blank" class="social-btn twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://linkedin.com" target="_blank" class="social-btn linkedin"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-copyright">
+                <p>Designed & Developed with ❤️ by <strong> Fatima Muslim</strong></p>
+                <p class="sub-copy">&copy; 2026 TravelVista Agency. All Rights Reserved.</p>
+            </div>
+        </footer>
+
+    </main>
+   <!-- ////////////////////////////////footer start -->
+      <!--==================================================
+            TravelVist Premium Footer
+===================================================-->
+
+<footer class="tv-footer">
+
+    <div class="tv-footer-container">
+
+        <!-- Company -->
+
+        <div class="tv-footer-about">
+
+            <a href="#" class="tv-footer-logo">
+                ✈ Travel<span>Vist</span>
+            </a>
+
+            <p>
+                TravelVist is your trusted travel partner, offering unforgettable
+                adventures, premium tour packages and amazing travel experiences
+                across Pakistan.
+
+            </p>
+
+            <div class="tv-footer-social">
+
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+                <a href="#"><i class="fab fa-twitter"></i></a>
+
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                <a href="#"><i class="fab fa-youtube"></i></a>
+
+            </div>
+
+        </div>
+
+        <!-- Quick Links -->
+
+        <div class="tv-footer-links">
+
+            <h3>Quick Links</h3>
+
+            <ul>
+
+                <li><a href="#">Home</a></li>
+
+                <li><a href="#">About</a></li>
+
+                <li><a href="#">Destinations</a></li>
+
+                <li><a href="#">Gallery</a></li>
+
+                <li><a href="#">Booking</a></li>
+
+                <li><a href="#">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Tours -->
+
+        <div class="tv-footer-links">
+
+            <h3>Popular Tours</h3>
+
+            <ul>
+
+                <li><a href="#">Hunza Valley</a></li>
+
+                <li><a href="#">Skardu</a></li>
+
+                <li><a href="#">Swat</a></li>
+
+                <li><a href="#">Naran Kaghan</a></li>
+
+                <li><a href="#">Fairy Meadows</a></li>
+
+                <li><a href="#">Murree</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- Contact -->
+
+        <div class="tv-footer-contact">
+
+            <h3>Contact Us</h3>
+
+            <p><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+
+            <p><i class="fas fa-phone"></i> +92 300 1234567</p>
+
+            <p><i class="fas fa-envelope"></i> travelvist@gmail.com</p>
+
+            <p><i class="fas fa-clock"></i> Mon - Sun : 24/7 Support</p>
+
+        </div>
+
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="tv-newsletter">
+
+        <div class="tv-news-content">
+
+            <h3>Subscribe To Our Newsletter</h3>
+
+            <p>Get the latest travel offers and destination updates.</p>
+
+        </div>
+
+        <form>
+
+            <input type="email" placeholder="Enter your email">
+
+            <button type="submit">Subscribe</button>
+
+        </form>
+
+    </div>
+
+    <!-- Bottom -->
+
+    <div class="tv-footer-bottom">
+
+        <p>
+
+            © 2026 <span>TravelVist</span>. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+<!-- //////////////////////////////footer end -->
+    <script src="./js/gallery.js"></script>
+</body>
+</html>
