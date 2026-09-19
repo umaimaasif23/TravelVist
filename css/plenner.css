@@ -688,14 +688,18 @@ input[type="range"] {
 /* Outer Container */
 .weather-alert{
   /* background: radial-gradient(circle, #335855 0%, #4ecbf2 60%, #5e6264 100%); */
-  background-image: url(../images/himaliyas-image.jpg);
+   background-image: url(../images/himaliyas-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-   min-height: 90vh;
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+  background-position: center;
+  background-attachment: fixed; /* Photo screen par fix rahegi */
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
 }
 .weather-alert-section {
   width: 100%;
@@ -704,6 +708,24 @@ input[type="range"] {
   padding: 0 16px;
   box-sizing: border-box;
     
+}
+/* Fixed Background Layer */
+
+/* Scrollable Wrapper Jo Background Ke Upar Se Guzrega */
+.scrollable-content-wrapper {
+  position: relative;
+  z-index: 2; /* Background se upar layer lane ke liye */
+  margin-top: -50px; /* Optional: Smooth overlap transition ke liye */
+  padding-bottom: 60px;
+}
+
+/* Sections Styling Adjustment */
+.estimator-section,
+.checklist-section {
+  width: 100%;
+  margin: 40px auto;
+  position: relative;
+  z-index: 3;
 }
 
 /* Glassmorphism Card */
@@ -914,12 +936,14 @@ input[type="range"] {
             ------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start --------------
    ========================================================================== */
    /* Container Wrapper */
+  
 .estimator-section {
   width: 100%;
   max-width: 850px;
   margin: 30px auto;
   padding: 0 16px;
   box-sizing: border-box;
+ 
 }
 
 /* Glassmorphism Outer Card */

@@ -5,18 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/plenner.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Document</title>
 </head>
 <body>
-    
-
+  
            <!-----------------------------navbar section start--------------------------------->
 
- <!-- Yahan JavaScript dynamic navbar load karega -->
-    <div id="navbar-container"></div>
 
-    <main>
 
+<!--======================
+    TravelVist Navbar
+=======================-->
+
+<header class="tv-header">
+
+    <div class="tv-container">
+
+        <!-- Logo -->
+
+        <a href="#" class="tv-logo">
+            <span class="tv-plane">✈</span>
+            Travel<span>Vist</span>
+        </a>
+
+        <!-- Navigation -->
+
+        <ul class="tv-nav-menu">
+
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="mountains.html">Mountains</a></li>
+            <li><a href="beaches.html">Beaches</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+
+        </ul>
+
+        <!-- Right Side -->
+
+        <a href="#" class="tv-book-btn">
+            Book Now
+        </a>
+
+        <!-- Mobile Button -->
+
+        <div class="tv-menu-btn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</header>
 
 <!-----------------------------navbar section end--------------------------------->
 
@@ -314,9 +361,11 @@
 
 <!------------------------------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start ------------------------------->
 <!------------------------------------ MOUNTAIN EXPENSE ESTIMATOR SECTION start ------------------------------->
-<!-- MOUNTAIN EXPENSE ESTIMATOR SECTION -->
+
+  <!-- MOUNTAIN EXPENSE ESTIMATOR SECTION -->
+<div class="scrollable-content-wrapper">
 <section class="estimator-section">
-  <div class="estimator-card">
+<div class="estimator-card">
     
     <!-- Section Header -->
     <div class="estimator-header">
@@ -412,17 +461,18 @@
 <!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLISTstart ------------------------------------->
 <!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLISTstart ------------------------------------->
 <!-- ESSENTIAL MOUNTAIN GEAR CHECKLIST -->
+
 <section class="checklist-section">
   <div class="checklist-card">
-    
+ 
     <!-- Section Header -->
-    <div class="checklist-header">
+   <div class="checklist-header">
       <div class="header-badge">🎒 Expedition Readiness</div>
       <h2>Essential Mountain Gear Checklist</h2>
       <p>Ensure you are fully packed before taking on high-altitude trails.</p>
 
       <!-- Dynamic Progress Tracker -->
-      <div class="checklist-progress-box">
+   <div class="checklist-progress-box">
         <div class="progress-labels">
           <span class="progress-title">Packing Progress</span>
           <span id="checklistCounter" class="progress-count">0 / 8 Packed</span>
@@ -432,12 +482,12 @@
         </div>
       </div>
     </div>
-
+ 
     <!-- 2-Column Side-by-Side Grid Layout -->
     <div class="gear-grid-container">
       
       <!-- COLUMN 1: Climbing & Trekking -->
-      <div class="gear-column">
+     <div class="gear-column">
         <div class="column-header">
           <span class="column-icon">🧗‍♂️</span>
           <h3>Climbing & Trekking</h3>
@@ -518,6 +568,11 @@
 
   </div>
 </section>
+</div>
+
+
+</div> <!-- Closing tag for scrollable-content-wrapper -->
+<!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLIST end ------------------------------------->
 <!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLIST end ------------------------------------->
 <!------------------------------ ESSENTIAL MOUNTAIN GEAR CHECKLIST end ------------------------------------->
 

@@ -17,11 +17,62 @@
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/mountains.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-    <!-- Dynamic Navbar -->
-    <div id="navbar-container"></div>
+   
+<!--======================
+    TravelVist Navbar
+=======================-->
+
+<header class="tv-header">
+
+    <div class="tv-container">
+
+        <!-- Logo -->
+
+        <a href="#" class="tv-logo">
+            <span class="tv-plane">✈</span>
+            Travel<span>Vist</span>
+        </a>
+
+        <!-- Navigation -->
+
+        <ul class="tv-nav-menu">
+
+    
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="mountains.html">Mountains</a></li>
+            <li><a href="beaches.html">Beaches</a></li>
+            <li><a href="planner.html">Planner</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="booking.html">Booking</a></li>
+
+        </ul>
+
+        <!-- Right Side -->
+
+        <a href="#" class="tv-book-btn">
+            Book Now
+        </a>
+
+        <!-- Mobile Button -->
+
+        <div class="tv-menu-btn">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</header>
 
 
          <!------------------------- 1. Hero Section ------------------------->
@@ -29,12 +80,16 @@
 
 <section class="mountains-hero">
     <!-- Background Video -->
-    <video class="hero-video-bg" autoplay loop muted playsinline>
+   <!---- <video class="hero-video-bg" autoplay loop muted playsinline>
       
         <source src="./images/hero-bg-video.mp4" type="video/mp4" />
      
     </video>
-
+-->
+    <video class="hero-video-bg" autoplay loop muted playsinline preload="auto">
+    <source src="https://res.cloudinary.com/btylrcpg/video/upload/q_50,w_1280,f_mp4,vc_h264/v1789757174/hero-bg-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+</video>
     <!-- Dark Overlay for better text readability -->
     <div class="hero-overlay"></div>
 
